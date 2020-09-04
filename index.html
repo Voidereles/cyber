@@ -12,10 +12,10 @@
 </head>
 
 <body>
-	<!-- <div class="information">
+	<div class="information">
 		Niebieska poświata wynika z zastosowanego światła. Poruszaj prawym przyciskiem myszy kadrem, przybliżaj i
 		oddalaj rolką, obracaj lewym przyciskiem myszy. Dowolny ruch kamerą można animować.
-	</div> -->
+	</div>
 
 	<header class="header"><a class="header__logo" href="/#intro"
 			aria-label="Cody Bennett, Designer &amp; Developer"><svg aria-hidden="true" height="45"
@@ -212,7 +212,7 @@ let threeJSContainer;
 				setTimeout( function() {
 		
 			gsap.to( camera, {
-				duration: 2,
+				duration: 6,
 				zoom: 2,
 				onUpdate: function () {
 				
@@ -222,10 +222,10 @@ let threeJSContainer;
 			} );
 			
 			gsap.to( controls.target, {
-				duration: 2,
-				x: 45,
-				y: 25,
-				z: 25,
+				duration: 6,
+				x: 15,
+				y: -45,
+				z: -25,
 				onUpdate: function () {
 				
 					controls.update();
@@ -233,7 +233,7 @@ let threeJSContainer;
 				}
 			} );
 		
-		}, 1000 );
+		}, 500 );
 
 			}
 
