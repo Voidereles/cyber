@@ -1,0 +1,177 @@
+$rgbBlack: rgb(0, 0, 0);
+$rgbBackground: rgb(17, 17, 17);
+$rgbWhite: rgb(255, 255, 255);
+$rgbWhite08: rgba(255, 255, 255, 0.8);
+$bezierFastoutSlowin: cubic-bezier(0.4, 0.0, 0.2, 1);
+$durationXS: 200ms;
+$durationS: 300ms;
+$durationM: 400ms;
+$durationL: 600ms;
+$durationXL: 800ms;
+$fontStack: Gotham,
+system-ui,
+-apple-system,
+BlinkMacSystemFont,
+San Francisco,
+Roboto,
+Segoe UI,
+Ubuntu,
+Helvetica Neue,
+sans-serif;
+$monoFontStack: SFMono Regular,
+Roboto Mono,
+Consolas,
+Liberation Mono,
+Menlo,
+Courier,
+monospace;
+$decoderFontStack: ヒラギノ角ゴ Pro W3,
+Hiragino Kaku Gothic Pro,
+Hiragino Sans,
+Osaka,
+メイリオ,
+Meiryo,
+Segoe UI,
+sans-serif;
+$fontWeightRegular: 400;
+$fontWeightMedium: 500;
+$fontWeightBold: 700;
+$fontSizeH1: 3.625rem;
+$fontSizeH2: 2.375rem;
+$fontSizeH3: 1.625rem;
+$fontSizeBodyL: 1.25rem;
+$fontSizeBodyM: 1.125rem;
+$fontSizeBodyS: 1rem;
+$lineHeightTitle: 1.1;
+$lineHeightBody: 1.5;
+$maxWidthS: 480px;
+$maxWidthM: 640px;
+$maxWidthL: 1096px;
+$spaceOuter: 64px;
+$spaceXS: 4px;
+$spaceS: 8px;
+$spaceM: 16px;
+$spaceL: 24px;
+$spaceXL: 32px;
+$space2XL: 48px;
+$space3XL: 64px;
+$space4XL: 96px;
+$space5XL: 128px;
+
+
+body {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: $fontStack;
+    font-weight: $fontWeightRegular;
+    font-synthesis: none;
+    background: $rgbBackground;
+    color: $rgbWhite08;
+    border: 0;
+    margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+
+.information {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 300px;
+}
+
+.header {
+    // $headerNavFontSize: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    width: $space2XL;
+    position: fixed;
+    top: $spaceOuter;
+    left: $spaceOuter;
+    bottom: $spaceOuter;
+    z-index: 1024;
+
+    &__logo {
+        display: flex;
+        position: relative;
+        padding: $spaceS $spaceS $spaceL;
+        z-index: 16;
+    }
+
+    .nav-toggle {
+        // $buttonSize: $space2XL);
+        position: fixed;
+        top: $spaceOuter;
+        right: $spaceOuter;
+        // width: $buttonSize;
+        // height: $buttonSize;
+        z-index: 1024;
+        display: none;
+    }
+
+    .button-icon-only {
+        // $buttonPadding: 0;
+        // $buttonTextColor: $colorTextBody);
+        // width: $buttonSize;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1 1 auto;
+        max-width: $space2XL;
+        position: relative;
+        top: calc($spaceM*(-1));
+    }
+
+    &__nav-list {
+        transform: rotate(-90deg) translate3d(-50%, 0, 0);
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    &__nav-link {
+        padding: $spaceM;
+        color: $rgbWhite08;
+        font-weight: $fontWeightMedium;
+        font-size: initial;
+        text-decoration: none;
+        position: relative;
+        transition: color $durationS ease .1s;
+        line-height: 1;
+    }
+
+}
+
+
+
+.threeJS {
+    &__container {
+        // height: 800px;
+        // height: 100%;
+        // width: 500px;
+        // width: 100%;
+
+        canvas {
+            outline: none;
+            border: none;
+            max-width: 100%;
+            max-height: 100%;
+
+            &:focus {
+                outline: none;
+                border: none;
+            }
+        }
+    }
+
+}
