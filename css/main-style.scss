@@ -101,6 +101,11 @@ body {
         position: relative;
         padding: $spaceS $spaceS $spaceL;
         z-index: 16;
+
+        svg {
+            width: 3rem;
+            height: 3rem;
+        }
     }
 
     .nav-toggle {
