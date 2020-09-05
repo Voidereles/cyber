@@ -2,22 +2,25 @@
 <html lang="en">
 
 <head>
-	<title>three.js webgl - FBX loader</title>
+	<title>PHL Group</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
 
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link type="text/css" rel="stylesheet" href="css/main-style.css">
 
 </head>
 
 <body>
-	<div class="information">
-		Niebieska poświata wynika z zastosowanego światła. Poruszaj prawym przyciskiem myszy kadrem, przybliżaj i
-		oddalaj rolką, obracaj lewym przyciskiem myszy. Dowolny ruch kamerą można animować.
-	</div>
 
-	<header class="header"><a class="header__logo" href="#" aria-label="PHL Group">
+
+	<header class="header">
+		<a class="header__logo" href="#" aria-label="PHL Group">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.15 22.75">
 				<defs>
 					<style>
@@ -26,7 +29,6 @@
 						}
 					</style>
 				</defs>
-				<title>Zasób 1</title>
 				<g id="Warstwa_2" data-name="Warstwa 2">
 					<g id="Layer_1" data-name="Layer 1">
 						<path class="cls-1"
@@ -36,308 +38,112 @@
 					</g>
 				</g>
 			</svg>
-		</a><button aria-expanded="false" aria-label="Menu" class="button nav-toggle button--icon-only"><span
-				class="button__text">
-				<div class="nav-toggle__inner"><svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24"
+		</a>
+		<button aria-expanded="false" aria-label="Menu" class="button nav-toggle button--icon-only">
+			<span class="button__text">
+				<div class="nav-toggle__inner">
+					<svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24"
 						class="icon nav-toggle__icon nav-toggle__icon--menu">
 						<path d="M22 6H2V4h20v2zM2 13h16v-2H2v2zm0 7h20v-2H2v2z"></path>
-					</svg><svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24"
+					</svg>
+					<svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24"
 						class="icon nav-toggle__icon nav-toggle__icon--close">
 						<path
 							d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
 						</path>
-					</svg></div>
-			</span></button>
+					</svg>
+				</div>
+			</span>
+		</button>
 		<nav class="header__nav">
 			<div class="header__nav-list"><a class="header__nav-link" href="/#project-1">Projects</a><a
 					class="header__nav-link" href="/articles">Articles</a><a class="header__nav-link"
 					href="/#about">About</a><a class="header__nav-link" href="/contact">Contact</a></div>
-			<div class="header__nav-icons"><a class="header__nav-icon-link" href="#" rel="noopener noreferrer"
-					target="_blank" aria-label="LinkedIn"><svg aria-hidden="true" height="24" viewBox="0 0 24 24"
-						width="24" class="icon header__nav-icon">
+			<div class="header__nav-icons">
+				<a class="header__nav-icon-link" href="#" rel="noopener noreferrer" target="_blank"
+					aria-label="LinkedIn">
+					<svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24" class="icon header__nav-icon">
 						<path
 							d="M20.4488 20.4492H16.8927V14.8801C16.8927 13.5521 16.869 11.8425 15.0431 11.8425C13.1909 11.8425 12.9075 13.2894 12.9075 14.7834V20.4488H9.35136V8.99648H12.7653V10.5616H12.8131C13.1547 9.97741 13.6484 9.49685 14.2416 9.17108C14.8348 8.84531 15.5052 8.68652 16.1815 8.71162C19.7858 8.71162 20.4503 11.0824 20.4503 14.1666L20.4488 20.4492ZM5.33883 7.43103C4.93067 7.4311 4.53164 7.31014 4.19223 7.08344C3.85282 6.85674 3.58827 6.53448 3.43201 6.15742C3.27575 5.78036 3.23479 5.36542 3.31435 4.96509C3.3939 4.56476 3.59039 4.19701 3.87895 3.90835C4.16751 3.61969 4.53519 3.42307 4.9355 3.34337C5.3358 3.26367 5.75074 3.30447 6.12786 3.46059C6.50497 3.61672 6.82732 3.88117 7.05414 4.2205C7.28097 4.55983 7.40208 4.95881 7.40215 5.36697C7.4022 5.63797 7.34886 5.90634 7.2452 6.15673C7.14153 6.40713 6.98958 6.63466 6.79798 6.82632C6.60638 7.01799 6.37889 7.17004 6.12853 7.27379C5.87817 7.37755 5.60984 7.43098 5.33883 7.43103ZM7.11691 20.4492H3.55704V8.99648H7.11691V20.4492ZM22.2217 0.00122317H1.77007C1.30588 -0.00401527 0.85857 0.175251 0.526481 0.49963C0.194392 0.824009 0.00468869 1.26696 -0.000976562 1.73115V22.2677C0.00449479 22.7321 0.194087 23.1753 0.526165 23.5001C0.858242 23.8248 1.30565 24.0044 1.77007 23.9994H22.2217C22.6871 24.0053 23.1357 23.8262 23.4691 23.5015C23.8025 23.1768 23.9934 22.733 23.9998 22.2677V1.72967C23.9932 1.26456 23.8022 0.821103 23.4688 0.496732C23.1354 0.172361 22.6869 -0.00639342 22.2217 -0.000259166">
 						</path>
-					</svg></a><a class="header__nav-icon-link" href="#" rel="noopener noreferrer" target="_blank"
-					aria-label="Github"><svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24"
-						class="icon header__nav-icon">
-						<path
-							d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z">
-						</path>
-					</svg></a><a class="header__nav-icon-link" href="#" rel="noopener noreferrer" target="_blank"
-					aria-label="Email"><svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24"
-						class="icon header__nav-icon">
+					</svg>
+				</a>
+				<a class="header__nav-icon-link" href="#" rel="noopener noreferrer" target="_blank" aria-label="Email">
+					<svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24" class="icon header__nav-icon">
 						<path
 							d="M20 8l-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6c0-1.11-.9-2-2-2z">
 						</path>
-					</svg></a></div>
-		</nav><button class="button theme-toggle button--icon-only" aria-label="Toggle theme"><span
-				class="button__text"><svg aria-hidden="true" class="theme-toggle__svg" width="38" height="38"
-					viewBox="0 0 38 38">
-					<defs>
-						<mask id="theme-toggle-mask-2">
-							<circle class="theme-toggle__circle theme-toggle__circle--mask theme-toggle__circle--dark"
-								cx="19" cy="19" r="13"></circle>
-							<circle class="theme-toggle__mask theme-toggle__mask--dark" cx="25" cy="14" r="9"></circle>
-						</mask>
-					</defs>
-					<path class="theme-toggle__path theme-toggle__path--dark"
-						d="M19 3v7M19 35v-7M32.856 11l-6.062 3.5M5.144 27l6.062-3.5M5.144 11l6.062 3.5M32.856 27l-6.062-3.5">
-					</path>
-					<circle class="theme-toggle__circle theme-toggle__circle--dark" mask="url(#theme-toggle-mask-2)"
-						cx="19" cy="19" r="12"></circle>
-				</svg></span></button>
+					</svg>
+				</a>
+			</div>
+		</nav>
 	</header>
 
+	<main class="main">
+		<div class="container-fluid">
+			<section class="about">
+				<div class="row">
+					<div class="col-lg-5">
+						<h2>O nas</h2>
+						<p class="about__text pr-lg-3">
+							Wie es zu Wunder ON kam
+							Wunder ON wurde 2014 von Pawel Laskowski gegründet. 2020 haben wir uns entschieden ein
+							Namenswechsel auf Wunder ON vorzunehmen und hat sich von Anfang an mit dem
+							Unternehmensaufbau beschäftigt.
+							Angefangen hat es mit dem Import von Elektrogeräten aus China und dem deutschlandweiten
+							Vertrieb von Balance Scootern und Telefonzubehör. Wir haben in den ersten Jahren erste
+							Erfahrung mit der Spiele Entwicklung für iOS und dem Programmieren von Webseiten.
+							2015 wurde Abiprofis gegründet, dass sich mit dem Vertrieb von Abitextilien und Abibüchern
+							beschäftigt. Bis heute vertreiben wir diese deutschlandweit.
+							2017 haben wir die Projekte Printyu und Printyu Business gegründet, mit denen wir den
+							Vertrieb für Berufs- und Werbekleidung beschäftigt haben.
+							2019 haben wir Printyu Business ein Rebranding gegeben und in Wunderprint umbenannt. Das
+							Projekt wird anfang 2020 gelauncht und wir erwarten ein großes Potential in dem
+							Werbetextilmarkt.
+						</p>
+					</div>
+					<div class="col-lg-7">
+						<div class="owl-carousel about__carousel">
+							<div class="about__img-container"><img class="img-fluid about__img"
+									src="images-icons/img2.png" alt="img2"></div>
+							<div class="about__img-container"><img class="img-fluid about__img"
+									src="images-icons/img1.jpg" alt="img1"></div>
+							<div class="about__img-container"><img class="img-fluid about__img"
+									src="images-icons/img3.png" alt="img3"></div>
+							<div class="about__img-container"><img class="img-fluid about__img"
+									src="images-icons/img4.png" alt="img4"></div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+		</div>
+	</main>
 
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"
+		async defer>
+	</script>
 
-
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+		integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"
+		async defer>
+	</script>
 
 
 
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.3.4/dist/gsap.min.js"></script>
+	<script src="js/CustomEase.min.js"></script>
 
-	<script type="module">
 
-		import * as THREE from './three.js-master/build/three.module.js';
+	<script src="threeScript.js" type="module"></script>
 
 
-		import { OrbitControls } from './three.js-master/examples/jsm/controls/OrbitControls.js';
-		import { FBXLoader } from './three.js-master/examples/jsm/loaders/FBXLoader.js';
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-		let threeJSContainer;
-		var container, controls;
-		var camera, scene, renderer, light;
-		var helper;
-
-
-// 		var mouseX = 0, mouseY = 0;
-
-// var windowHalfX = window.innerWidth / 2;
-// var windowHalfY = window.innerHeight / 2;
-const mouse = new THREE.Vector2();
-const target = new THREE.Vector2();
-const windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );
-
-
-		var clock = new THREE.Clock();
-
-		var mixer;
-
-		init();
-		animate();
-
-		function init() {
-
-			container = document.createElement('div');
-			container.id = "threeJSContainer";
-			container.classList.add('threeJS__container');
-			threeJSContainer = document.getElementById('threeJSContainer');
-
-			document.body.appendChild(container);
-
-			camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 2000);
-			camera.position.set(250, 300, 300);
-
-			scene = new THREE.Scene();
-			// scene.background = new THREE.Color( 0xa0a0a0 );
-			scene.background = new THREE.Color(0x111111);
-
-			// scene.fog = new THREE.Fog( 0xa0a0a0, 200, 1000 );
-			scene.fog = new THREE.Fog(0x111111, 200, 1000);
-
-			light = new THREE.HemisphereLight(0xffffff, 0x444444);
-			light.position.set(0, 200, 0);
-			scene.add(light);
-
-			light = new THREE.DirectionalLight(0x111111, 3);
-			light.position.set(220, 150, -250);
-			light.castShadow = true;
-			light.shadow.mapSize.width = 1024;
-			light.shadow.mapSize.height = 1024;
-			light.shadow.camera.top = 180;
-			light.shadow.camera.bottom = - 200;
-			light.shadow.camera.left = -200;
-			light.shadow.camera.right = 300;
-			scene.add(light);
-			helper = new THREE.SpotLightHelper(light);
-			scene.add(helper);
-
-			// ground
-			var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(2000, 2000), new THREE.MeshPhongMaterial({ color: 0x333333, depthWrite: false }));
-			mesh.rotation.x = - Math.PI / 2;
-			mesh.receiveShadow = true;
-			scene.add(mesh);
-
-			// var grid = new THREE.GridHelper( 2000, 20, 0x000000, 0x000000 );
-			// grid.material.opacity = 0.2;
-			// grid.material.transparent = true;
-			// scene.add( grid );
-
-			// model
-			var loader = new FBXLoader();
-			loader.load('phlgroup.FBX', function (object) {
-
-				mixer = new THREE.AnimationMixer(object);
-
-				// var action = mixer.clipAction( object.animations[ 0 ] );
-				// action.play();
-
-				object.traverse(function (child) {
-
-					if (child.isMesh) {
-
-						child.castShadow = true;
-						child.receiveShadow = true;
-
-					}
-
-				});
-
-				scene.add(object);
-
-			});
-
-			renderer = new THREE.WebGLRenderer({ antialias: true });
-			renderer.setPixelRatio(window.devicePixelRatio);
-			renderer.setSize(window.innerWidth, window.innerHeight);
-			renderer.shadowMap.enabled = true;
-			container.appendChild(renderer.domElement);
-
-
-
-			controls = new OrbitControls(camera, renderer.domElement);
-			controls.target.set(85, 20, 20);
-			controls.update();
-			controls.enabled = false; //blocking orbit controls
-
-
-			document.addEventListener( 'mousemove', onMouseMove, false );
-    document.addEventListener( 'wheel', onMouseWheel, false );
-		window.addEventListener( 'resize', onResize, false );
-
-			window.addEventListener('resize', onWindowResize, false);
-
-
-			setTimeout(function () {
-
-				gsap.to(camera, {
-					duration: 6,
-					zoom: 2,
-					onUpdate: function () {
-
-						camera.updateProjectionMatrix();
-
-					}
-				});
-
-				gsap.to(controls.target, {
-					duration: 6,
-					x: 15,
-					y: -45,
-					z: -25,
-					onUpdate: function () {
-
-						controls.update();
-
-					}
-				});
-
-			}, 500);
-
-
-
-			
-
-		}
-
-		function onWindowResize() {
-
-			camera.aspect = window.innerWidth / window.innerHeight;
-			camera.updateProjectionMatrix();
-
-			renderer.setSize(window.innerWidth, window.innerHeight);
-
-		}
-
-		
-function onResize( event ) {
-
-const width = window.innerWidth;
-const height = window.innerHeight;
-
-windowHalf.set( width / 2, height / 2 );
-
-camera.aspect = width / height;
-camera.updateProjectionMatrix();
-renderer.setSize( width, height );
-			
-}
-
-// 		function onDocumentMouseMove( event ) {
-
-// mouseX = event.clientX - windowHalfX;
-// mouseY = event.clientY - windowHalfY;
-// console.log('dasdasd')
-
-// }
-
-
-
-function onMouseMove( event ) {
-
-mouse.x = ( event.clientX - windowHalf.x );
-mouse.y = ( event.clientY - windowHalf.x );
-console.log('dasdas');
-}
-
-
-function onMouseWheel( event ) {
-
-camera.position.z += event.deltaY * 0.1; // move camera along z-axis
-
-}
-
-		function render() {
-			const canvas = renderer.domElement;
-			camera.aspect = canvas.clientWidth / canvas.clientHeight;
-			camera.updateProjectionMatrix();
-
-			
-			// camera.position.x += ( mouseX - camera.position.x ) * 5.36;
-			// 	camera.position.y += ( - ( mouseY ) - camera.position.y ) * 5.36;
-				
-
-				camera.lookAt( scene.position );
-		}
-		//
-
-		function animate() {
-
-		
-
-	target.x = ( 1 - mouse.x ) * 0.002;
-  target.y = ( 1 - mouse.y ) * 0.002;
-  
-  camera.rotation.x += 0.05 * ( target.y - camera.rotation.x );
-  camera.rotation.y += 0.05 * ( target.x - camera.rotation.y );
-
-			requestAnimationFrame(animate, renderer.domElement);
-
-			var delta = clock.getDelta();
-
-			if ( mixer ) mixer.update( delta );
-
-			renderer.render(scene, camera);
-
-		}
-
-	</script>
-
+	<script src="js/script.js"></script>
 </body>
 
 </html>
