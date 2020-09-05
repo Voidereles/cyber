@@ -7,4 +7,6 @@ $('.about__carousel').owlCarousel({
     autoplay: true,
     autoplayHoverPause: true,
     items: 1
-})
+});
+
+new WOW().init();
