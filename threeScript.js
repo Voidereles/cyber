@@ -5,8 +5,14 @@ import {
     OrbitControls
 } from './three.js-master/examples/jsm/controls/OrbitControls.js';
 import {
+    GUI,
+    gui
+} from './three.js-master/examples/jsm/libs/dat.gui.module.js';
+import {
     FBXLoader
 } from './three.js-master/examples/jsm/loaders/FBXLoader.js';
+// from './three.js-master/examples/jsm/libs/dat.gui.module.js';
+
 
 let threeJSContainer;
 var container, controls;
@@ -30,6 +36,54 @@ var helper;
 var clock = new THREE.Clock();
 
 var mixer;
+
+export const DecreaseLogoSize = function () {
+    gsap.to(camera, {
+        duration: 4,
+        zoom: 0.7,
+        ease: "sine.out",
+        onUpdate: function () {
+            camera.updateProjectionMatrix();
+        }
+    });
+
+    gsap.to(controls.target, {
+        duration: 4,
+        x: -250,
+        y: -(window.innerHeight / 2) - 200,
+        z: 75,
+        ease: "sine.out",
+        onUpdate: function () {
+            controls.update();
+        }
+    });
+}
+
+//export because of module!!! big brain time https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+export const IncreaseLogoSize = function () {
+    gsap.to(camera, {
+        duration: 4,
+        zoom: 1,
+        ease: "sine.out",
+        onUpdate: function () {
+            camera.updateProjectionMatrix();
+        }
+    });
+
+    gsap.to(controls.target, {
+        duration: 4,
+        x: 245,
+        y: -50,
+        z: -100,
+        ease: "sine.out",
+        onUpdate: function () {
+            controls.update();
+        }
+    });
+}
+window.DecreaseLogoSize = DecreaseLogoSize; //window, żeby móc odwołać się w konsoli. Tylko do debugowania!
+window.IncreaseLogoSize = IncreaseLogoSize;
+
 
 init();
 animate();
@@ -137,73 +191,89 @@ function init() {
 
     // CustomEase.create("sine.out", "sine.out");
 
-    function IncreaseLogoSize() {
-        gsap.to(camera, {
-            duration: 3,
-            zoom: 1.7,
-            ease: "sine.out",
-            onUpdate: function () {
 
-                camera.updateProjectionMatrix();
 
-            }
-        });
-
-        gsap.to(controls.target, {
-            duration: 3,
-            x: 45,
-            y: -75,
-            z: -75,
-            ease: "sine.out",
-            onUpdate: function () {
-                controls.update();
-            }
-        });
-    }
-
-    function DecreaseLogoSize() {
-
-        gsap.to(camera, {
-            duration: 4,
-            zoom: 0.7,
-            ease: "sine.out",
-            onUpdate: function () {
-
-                camera.updateProjectionMatrix();
-
-            }
-        });
-
-        gsap.to(controls.target, {
-            duration: 4,
-            x: -250,
-            y: -(window.innerHeight / 2) - 200,
-            z: 75,
-            ease: "sine.out",
-            onUpdate: function () {
-
-                controls.update();
-
-            }
-        });
-    }
 
     if (window.pageYOffset < window.innerHeight / 3) {
         IncreaseLogoSize();
+        console.log("increase no scroll");
     } else {
         DecreaseLogoSize();
+        console.log('decrease no scroll');
     }
 
     $(window).scroll(function () {
         if (window.pageYOffset >= window.innerHeight / 3) {
             DecreaseLogoSize();
+            console.log("decrease");
         } else {
-            IncreaseLogoSize()
+            IncreaseLogoSize();
+            console.log("increase");
         }
     });
 
+    // let cameraRotationController = {
+    //     x: 100,
+    //     y: 50,
+    //     z: 30,
+    // };
 
+    // let controlsTargetController = {
+    //     x: 245,
+    //     y: -50,
+    //     z: -100
+    // }
+
+    // let cameraChanger = function () {
+    //     camera.position["x"] = cameraRotationController.x;
+    //     camera.position["y"] = cameraRotationController.y;
+    //     camera.position["z"] = cameraRotationController.z;
+    //     camera.updateProjectionMatrix();
+    // }
+
+    // let controlsTargetChanger = function () {
+    //     controls.target["x"] = controlsTargetController.x;
+    //     controls.target["y"] = controlsTargetController.y;
+    //     controls.target["z"] = controlsTargetController.z;
+    //     controls.update();
+    // }
+
+    const buttonDecreaseLogo = {
+        add: function () {
+            DecreaseLogoSize();
+        }
+    }
+
+    const buttonIncreaseLogo = {
+        add: function () {
+            IncreaseLogoSize()
+        }
+    }
+
+    var gui = new GUI();
+
+    gui.add(buttonDecreaseLogo, "add").name('smaller logo gsap animation');
+    gui.add(buttonIncreaseLogo, "add").name('bigger logo gsap animation');
+
+    // gui.add(cameraRotationController, 'x', -720, 720).name('cameraRotate x').onChange(cameraChanger);
+
+
+    gui.add(camera.position, 'x', -720, 720).name('cameraPosition x');
+    gui.add(camera.position, 'y', -720, 720).name('cameraPosition y');
+    gui.add(camera.position, 'z', -720, 720).name('cameraPosition z');
+
+    gui.add(controls.target, 'x', -720, 720).name('controlsTarget x');
+    gui.add(controls.target, 'y', -720, 720).name('controlsTarget y');
+    gui.add(controls.target, 'z', -720, 720).name('controlsTarget z');
+
+    // gui.add(controlsTargetController, 'x', -720, 720).onChange(controlsTargetChanger);
+    gui.add(camera, 'fov', 1, 120).onChange(camera.updateProjectionMatrix());
+
+    // cameraChanger();
 }
+
+// container.appendChild(gui.domElement);
+// gui.domElement.css('margin-top', '-20px');
 
 function onWindowResize() {
 
@@ -296,10 +366,15 @@ function render() {
 }
 //
 
+function update() {
+    controls.update();
+    // cameraChanger();
+}
+
 function animate() {
 
 
-
+    update();
     // 	target.x = ( 1 - mouse.x ) * 0.000002;
     //   target.y = ( 1 - mouse.y ) * 0.000002;
 

@@ -59,7 +59,7 @@ body {
 
 .container-fluid {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1600px;
 }
 
 .header {
@@ -247,10 +247,14 @@ body {
   transition: fill 400ms ease;
 }
 
-.main {
+.main-container {
   margin-top: 100vh;
   margin-left: calc(112px + 5rem);
   position: relative;
+}
+
+.dg main a {
+  margin-top: -50px;
 }
 
 .about {
