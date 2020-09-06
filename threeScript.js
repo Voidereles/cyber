@@ -11,33 +11,24 @@ import {
 import {
     FBXLoader
 } from './three.js-master/examples/jsm/loaders/FBXLoader.js';
-// from './three.js-master/examples/jsm/libs/dat.gui.module.js';
 
 
 let threeJSContainer;
 var container, controls;
 var camera, scene, renderer, light;
 var helper;
-// const cc = Config.controls;
-// 	const targetCamera = new THREE.Vector3().copy(controls.target);
-// let mouseX = 0;
-// let mouseY = 0;
-// let mouseXpercent = 0;
-// let mouseYpercent = 0;
-// 		var mouseX = 0, mouseY = 0;
 
-// var windowHalfX = window.innerWidth / 2;
-// var windowHalfY = window.innerHeight / 2;
-// const mouse = new THREE.Vector2();
-// const target = new THREE.Vector2();
-// const windowHalf = new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2);
+
+let targetCamera;
+let mouseX = 0;
+let mouseY = 0;
+let mouseXpercent = 0;
+let mouseYpercent = 0;
 
 
 var clock = new THREE.Clock();
 
-var mixer;
-
-export const DecreaseLogoSize = function () {
+const DecreaseLogoSize = function () {
     gsap.to(camera, {
         duration: 4,
         zoom: 0.7,
@@ -60,7 +51,7 @@ export const DecreaseLogoSize = function () {
 }
 
 //export because of module!!! big brain time https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
-export const IncreaseLogoSize = function () {
+const IncreaseLogoSize = function () {
     gsap.to(camera, {
         duration: 4,
         zoom: 1,
@@ -101,10 +92,8 @@ function init() {
     camera.position.set(250, 300, 300);
 
     scene = new THREE.Scene();
-    // scene.background = new THREE.Color( 0xa0a0a0 );
     scene.background = new THREE.Color(0x111111);
 
-    // scene.fog = new THREE.Fog( 0xa0a0a0, 200, 1000 );
     scene.fog = new THREE.Fog(0x111111, 200, 1000);
 
     light = new THREE.HemisphereLight(0xffffff, 0x444444);
@@ -141,12 +130,6 @@ function init() {
     // model
     var loader = new FBXLoader();
     loader.load('phlgroup.FBX', function (object) {
-
-        mixer = new THREE.AnimationMixer(object);
-
-        // var action = mixer.clipAction( object.animations[ 0 ] );
-        // action.play();
-
         object.traverse(function (child) {
 
             if (child.isMesh) {
@@ -164,6 +147,9 @@ function init() {
 
 
 
+
+
+
     renderer = new THREE.WebGLRenderer({
         antialias: true
     });
@@ -173,25 +159,48 @@ function init() {
     container.appendChild(renderer.domElement);
 
 
-
     controls = new OrbitControls(camera, renderer.domElement);
     controls.target.set(85, 20, 20);
     controls.update();
     controls.enabled = false; //blocking orbit controls
 
-    // container.addEventListener("mousemove", onDocumentMouseMove, false);
-    // 		document.addEventListener( 'mousemove', onMouseMove, false );
-    // document.addEventListener( 'wheel', onMouseWheel, false );
-    // 	window.addEventListener( 'resize', onResize, false );
+    //moving mouse
+    targetCamera = new THREE.Vector3().copy(controls.target)
+
+    container.addEventListener("mousemove", onDocumentMouseMove, false);
+    // document.addEventListener( 'touchstart', onTouchStart, false );
+    container.addEventListener("touchmove", onTouchMove, false);
+
+    function onTouchMove(event) {
+        event.preventDefault();
+        onDocumentMouseMove(event.touches[0]);
+    }
+
+    function onDocumentMouseMove(event) {
+        const windowHalfX = window.innerWidth >> 1;
+        const windowHalfY = window.innerHeight >> 1;
+
+        mouseX = event.clientX - windowHalfX;
+        mouseY = event.clientY - windowHalfY;
+
+        mouseXpercent = mouseX / (window.innerWidth / 2);
+        mouseYpercent = mouseY / (window.innerHeight / 2);
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     window.addEventListener('resize', onWindowResize, false);
 
     gsap.registerPlugin(CustomEase);
-
-
-    // CustomEase.create("sine.out", "sine.out");
-
-
 
 
     if (window.pageYOffset < window.innerHeight / 3) {
@@ -212,32 +221,6 @@ function init() {
         }
     });
 
-    // let cameraRotationController = {
-    //     x: 100,
-    //     y: 50,
-    //     z: 30,
-    // };
-
-    // let controlsTargetController = {
-    //     x: 245,
-    //     y: -50,
-    //     z: -100
-    // }
-
-    // let cameraChanger = function () {
-    //     camera.position["x"] = cameraRotationController.x;
-    //     camera.position["y"] = cameraRotationController.y;
-    //     camera.position["z"] = cameraRotationController.z;
-    //     camera.updateProjectionMatrix();
-    // }
-
-    // let controlsTargetChanger = function () {
-    //     controls.target["x"] = controlsTargetController.x;
-    //     controls.target["y"] = controlsTargetController.y;
-    //     controls.target["z"] = controlsTargetController.z;
-    //     controls.update();
-    // }
-
     const buttonDecreaseLogo = {
         add: function () {
             DecreaseLogoSize();
@@ -255,9 +238,6 @@ function init() {
     gui.add(buttonDecreaseLogo, "add").name('smaller logo gsap animation');
     gui.add(buttonIncreaseLogo, "add").name('bigger logo gsap animation');
 
-    // gui.add(cameraRotationController, 'x', -720, 720).name('cameraRotate x').onChange(cameraChanger);
-
-
     gui.add(camera.position, 'x', -720, 720).name('cameraPosition x');
     gui.add(camera.position, 'y', -720, 720).name('cameraPosition y');
     gui.add(camera.position, 'z', -720, 720).name('cameraPosition z');
@@ -266,14 +246,13 @@ function init() {
     gui.add(controls.target, 'y', -720, 720).name('controlsTarget y');
     gui.add(controls.target, 'z', -720, 720).name('controlsTarget z');
 
-    // gui.add(controlsTargetController, 'x', -720, 720).onChange(controlsTargetChanger);
+    //pos rot and scale go into local transform matrix which is by default automatically updated
+    //Projection Matrix only needs update after FOV changes
+
     gui.add(camera, 'fov', 1, 120).onChange(camera.updateProjectionMatrix());
 
-    // cameraChanger();
 }
 
-// container.appendChild(gui.domElement);
-// gui.domElement.css('margin-top', '-20px');
 
 function onWindowResize() {
 
@@ -285,107 +264,32 @@ function onWindowResize() {
 }
 
 
-// function onResize( event ) {
-
-// const width = window.innerWidth;
-// const height = window.innerHeight;
-
-// windowHalf.set( width / 2, height / 2 );
-
-// camera.aspect = width / height;
-// camera.updateProjectionMatrix();
-// renderer.setSize( width, height );
-
-// }
-
-// 		function onDocumentMouseMove( event ) {
-
-// mouseX = event.clientX - windowHalfX;
-// mouseY = event.clientY - windowHalfY;
-// console.log('dasdasd')
-
-// }
-
-//  function onDocumentMouseMove(event) {
-//       const windowHalfX = window.innerWidth >> 1;
-//       const windowHalfY = window.innerHeight >> 1;
-
-//       mouseX = event.clientX - windowHalfX;
-//       mouseY = event.clientY - windowHalfY;
-
-//       mouseXpercent = mouseX / (window.innerWidth / 2);
-//       mouseYpercent = mouseY / (window.innerHeight / 2);
-//     }
-
-//    controls.update = function () {
-//       // if (upIsDown && camy < 1.5) {camy++};
-//       // if (downIsDown && camy > 2.2) {camy--};
-
-//       // if (leftIsDown && angle > -0.4) {angle-= 0.01};
-//       // if (rightIsDown && angle < 0.4) {angle+= 0.01};
-//       // toangle += (angle - toangle)/20;
-
-//       // camera.position.x = Math.sin(toangle) * distance;
-//       // camera.position.z = Math.cos(toangle) * distance;
-//       // camera.position.y += (camy - camera.position.y) / 10;
-
-//       targetCamera.x += (-mouseXpercent * 5 - targetCamera.x) / 10;
-//       targetCamera.y += (-(mouseYpercent * 5) + 1 - targetCamera.y) / 50;
-
-//       camera.lookAt(targetCamera);
-//     };
-
-
-
-// function onMouseMove( event ) {
-
-// mouse.x = ( event.clientX - windowHalf.x );
-// mouse.y = ( event.clientY - windowHalf.x );
-// console.log('dasdas');
-// }
-
-
-// function onMouseWheel( event ) {
-
-// camera.position.z += event.deltaY * 0.1; // move camera along z-axis
-// console.log('dasdas11');
-
-// }
-
 function render() {
     const canvas = renderer.domElement;
     camera.aspect = canvas.clientWidth / canvas.clientHeight;
     camera.updateProjectionMatrix();
 
-
-    // camera.position.x += ( mouseX - camera.position.x ) * 5.36;
-    // 	camera.position.y += ( - ( mouseY ) - camera.position.y ) * 5.36;
-
-
     // camera.lookAt( scene.position );
 }
-//
+
 
 function update() {
     controls.update();
-    // cameraChanger();
+
+    targetCamera.x += (-mouseXpercent * 35 - targetCamera.x) / 10;
+    targetCamera.y += (-(mouseYpercent * 35) + 1 - targetCamera.y) / 15;
+
+    camera.lookAt(targetCamera);
 }
 
 function animate() {
 
 
     update();
-    // 	target.x = ( 1 - mouse.x ) * 0.000002;
-    //   target.y = ( 1 - mouse.y ) * 0.000002;
-
-    //   camera.rotation.x += 0.005 * ( target.y - camera.rotation.x );
-    //   camera.rotation.y += 0.005 * ( target.x - camera.rotation.y );
 
     requestAnimationFrame(animate, renderer.domElement);
 
     var delta = clock.getDelta();
-
-    if (mixer) mixer.update(delta);
 
     renderer.render(scene, camera);
 
