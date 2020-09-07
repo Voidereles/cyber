@@ -400,7 +400,6 @@ body {
   border-radius: 10%;
   width: 100%;
   min-height: 100vh;
-  color: white;
 }
 
 .refer__container {
@@ -418,35 +417,6 @@ body {
   left: calc((112px + 5rem) * (-1));
 }
 
-.refer__animation-container--animated::after {
-  -webkit-animation-name: bgOpacityChange;
-          animation-name: bgOpacityChange;
-}
-
-.refer__animation-container::after {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: calc(100% + 112px + 5rem);
-  left: calc((112px + 5rem) * (-1));
-  top: 0;
-  z-index: 0;
-  background-image: url("../images-icons/all-companies.png");
-  background-size: cover;
-  background-repeat: repeat;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-duration: 12.2s;
-          animation-duration: 12.2s;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
-  -webkit-transition: 3s;
-  transition: 3s;
-  opacity: 0.5;
-  -webkit-animation-timing-function: all 500ms cubic-bezier(0.805, 0.25, 0.75, 0.75);
-          animation-timing-function: all 500ms cubic-bezier(0.805, 0.25, 0.75, 0.75);
-}
-
 .refer::before {
   content: '';
   position: absolute;
@@ -455,8 +425,8 @@ body {
   border-top-right-radius: 5%;
   width: calc(100% + 112px + 5rem);
   background: #323232;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.799055)), color-stop(12%, rgba(38, 38, 38, 0.933509)), color-stop(25%, rgba(35, 35, 35, 0.983929)), color-stop(34%, #202020));
-  background: linear-gradient(180deg, rgba(50, 50, 50, 0.799055) 0%, rgba(38, 38, 38, 0.933509) 12%, rgba(35, 35, 35, 0.983929) 25%, #202020 34%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0)), color-stop(12%, rgba(38, 38, 38, 0.933509)), color-stop(25%, rgba(35, 35, 35, 0.983929)), color-stop(34%, #202020));
+  background: linear-gradient(180deg, rgba(50, 50, 50, 0) 0%, rgba(38, 38, 38, 0.933509) 12%, rgba(35, 35, 35, 0.983929) 25%, #202020 34%);
   left: calc((112px + 5rem) * (-1));
   z-index: 0;
 }
@@ -492,13 +462,14 @@ body {
 .refer__company-container {
   padding: 1.5rem 1.7rem 3rem 1.7rem;
   margin: 0.25rem;
-  background: #313131;
+  background: white;
   border-radius: 1rem;
   overflow-y: hidden;
   max-height: 330px;
-  background: linear-gradient(145deg, #343434, #2c2c2c);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), #c2c2c2);
   -webkit-box-shadow: -1px -1px 4px 1px rgba(27, 27, 27, 0.7);
           box-shadow: -1px -1px 4px 1px rgba(27, 27, 27, 0.7);
+  color: #313131;
 }
 
 .refer__company-container:hover .refer__company {
@@ -536,7 +507,7 @@ body {
   content: '';
   width: 100%;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #313131;
   position: absolute;
   bottom: -12px;
   left: 0;
@@ -546,27 +517,5 @@ body {
   text-align: justify;
   line-height: 1.7;
   font-size: 0.8rem;
-}
-
-@-webkit-keyframes bgOpacityChange {
-  from {
-    background-position: -20px 50px;
-    opacity: 0.5;
-  }
-  to {
-    background-position: 100px -250px;
-    opacity: 0.3;
-  }
-}
-
-@keyframes bgOpacityChange {
-  from {
-    background-position: -20px 50px;
-    opacity: 0.5;
-  }
-  to {
-    background-position: 100px -250px;
-    opacity: 0.3;
-  }
 }
 /*# sourceMappingURL=main-style.css.map */
