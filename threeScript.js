@@ -14,8 +14,9 @@ import {
 
 
 let threeJSContainer;
-var container, controls;
-var camera, scene, renderer, lightA, lightH, lightD, mixer;
+let container, controls;
+let camera, scene, renderer, mixer;
+let lightA, lightH, lightD;
 var helper;
 
 
@@ -52,12 +53,6 @@ const DecreaseLogoSize = function () {
 
 //export because of module!!! big brain time https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 const IncreaseLogoSize = function () {
-    gsap.from(camera.position, {
-        x: -49,
-        y: 720,
-        z: 300
-    });
-
     gsap.to(camera, {
         duration: 4,
         ease: "sine.out",
@@ -123,7 +118,7 @@ function init() {
 
     scene.fog = new THREE.Fog(0x111111, 200, 1000);
 
-    const lightA = new THREE.AmbientLight(0xfffffe, 0.1);
+    lightA = new THREE.AmbientLight(0xfffffe, 0.1);
     scene.add(lightA);
 
     lightH = new THREE.HemisphereLight(0xffffff, 0x444444);
@@ -133,13 +128,13 @@ function init() {
     lightD = new THREE.DirectionalLight(0x111111, 3);
     lightD.position.set(220, 150, -250);
     lightD.castShadow = true;
-    lightD.shadow.mapSize.width = 1024;
-    lightD.shadow.mapSize.height = 1024;
+    lightD.shadow.mapSize.width = 4096;
+    lightD.shadow.mapSize.height = 4096;
     lightD.shadow.camera.top = 180;
     lightD.shadow.camera.bottom = -200;
     lightD.shadow.camera.left = -200;
     lightD.shadow.camera.right = 300;
-    scene.add(lightD);
+    // scene.add(lightD);
     var helperD = new THREE.DirectionalLightHelper(lightD, 5);
     scene.add(helperD);
 
@@ -152,10 +147,10 @@ function init() {
     mesh.receiveShadow = true;
     scene.add(mesh);
 
-    // var grid = new THREE.GridHelper( 2000, 20, 0x000000, 0x000000 );
-    // grid.material.opacity = 0.2;
-    // grid.material.transparent = true;
-    // scene.add( grid );
+    var grid = new THREE.GridHelper(2000, 44, 0x000000, 0x000000);
+    grid.material.opacity = 0.15;
+    grid.material.transparent = true;
+    scene.add(grid);
 
     // model
     var loader = new FBXLoader(loadingManager);
@@ -262,8 +257,8 @@ function init() {
         groundColor: lightH.groundColor.getHex(),
         skyColor: lightH.color.getHex(),
         color: lightD.color.getHex(),
-        shadowMapSizeWidth: 512,
-        shadowMapSizeHeight: 512,
+        shadowMapSizeWidth: 4096,
+        shadowMapSizeHeight: 4096,
 
         mapsEnabled: true
         //pobieramy tu te informacje co już są
@@ -303,7 +298,10 @@ function init() {
     directionalLightFolder.add(lightD.position, "x", -500, 500, 1);
     directionalLightFolder.add(lightD.position, "y", -500, 500, 1);
     directionalLightFolder.add(lightD.position, "z", -500, 500, 1);
-    directionalLightFolder.add(lightD, 'intensity', 0, 4, 0.01);
+    directionalLightFolder.add(lightD, 'intensity', 0, 4, 0.01)
+    directionalLightFolder.addColor(data, 'color').onChange(() => {
+        lightD.color.setHex(Number(data.color.toString().replace('#', '0x')));
+    });
     directionalLightFolder.add(lightD.shadow.camera, "left", -300, 300, 1).onChange(() => light.shadow.camera.updateProjectionMatrix())
     directionalLightFolder.add(lightD.shadow.camera, "right", -300, 300, 1).onChange(() => light.shadow.camera.updateProjectionMatrix())
     directionalLightFolder.add(lightD.shadow.camera, "top", -300, 300, 1).onChange(() => light.shadow.camera.updateProjectionMatrix())

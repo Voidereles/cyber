@@ -399,22 +399,14 @@ body {
   position: relative;
   border-radius: 10%;
   width: 100%;
-  min-height: 100vh;
+  z-index: 3;
+  min-height: 50vh;
 }
 
 .refer__container {
   position: relative;
   z-index: 1;
   overflow-y: hidden;
-}
-
-.refer__animation-container {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  top: 0;
-  left: calc((112px + 5rem) * (-1));
 }
 
 .refer::before {
@@ -517,5 +509,112 @@ body {
   text-align: justify;
   line-height: 1.7;
   font-size: 0.8rem;
+}
+
+.refer__btn {
+  background-color: #313131;
+  border-radius: 12px;
+}
+
+.contact {
+  background-color: transparent;
+  min-height: 50vh;
+  position: relative;
+}
+
+.contact::before {
+  background-color: #202020;
+  position: absolute;
+  content: '';
+  pointer-events: none;
+  left: -25%;
+  top: -40%;
+  width: 150%;
+  height: 75%;
+  -webkit-transform: rotate(-3deg);
+  transform: rotate(-7deg);
+  z-index: 0;
+}
+
+.contact__form-container {
+  padding: 40px;
+  background-color: white;
+  -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  min-height: 200px;
+  margin-top: 5rem;
+}
+
+.contact__fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact__label {
+  font-weight: 700;
+  color: #102a43;
+  line-height: 35px;
+  line-height: 2.5rem;
+  font-size: 0.7rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.contact__label-star {
+  padding-left: 5px;
+  color: #971515;
+}
+
+.contact__input, .contact__textarea {
+  background: #FFFFFF;
+  border: 1px solid #E7E7E7;
+  color: #313131;
+  border-radius: 2px;
+  width: 100%;
+  line-height: 16px;
+  padding: 0.5rem;
+  display: block;
+}
+
+.contact__input:focus, .contact__textarea:focus {
+  border: 1px solid #102a43;
+  outline: none;
+}
+
+.contact__form-btn {
+  width: calc(100% - 30px);
+  margin: .35em .75em .625em;
+  background-color: #313131;
+}
+
+.contact__info {
+  padding: 1rem;
+  margin-top: 5rem;
+}
+
+.contact__link {
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.contact__link svg path {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.contact__link:hover, .contact__link:focus, .contact__link:active {
+  color: white;
+}
+
+.contact__link:hover svg path, .contact__link:focus svg path, .contact__link:active svg path {
+  fill: white;
 }
 /*# sourceMappingURL=main-style.css.map */
