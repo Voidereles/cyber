@@ -39,11 +39,21 @@ const DecreaseLogoSize = function () {
         }
     });
 
+    gsap.to(camera.position, {
+        duration: 4,
+        x: 29,
+        y: 263,
+        z: 404,
+        onUpdate: function () {
+            update();
+        }
+    })
+
     gsap.to(controls.target, {
         duration: 4,
-        x: -250,
-        y: -(window.innerHeight / 2) - 200,
-        z: 75,
+        x: -299,
+        y: -252,
+        z: -486,
         ease: "sine.out",
         onUpdate: function () {
             controls.update();
@@ -63,9 +73,9 @@ const IncreaseLogoSize = function () {
 
     gsap.to(camera.position, {
         duration: 4,
-        x: 123,
-        y: 248,
-        z: 201,
+        x: 107,
+        y: 357,
+        z: 91,
         onUpdate: function () {
             update();
         }
@@ -73,9 +83,9 @@ const IncreaseLogoSize = function () {
 
     gsap.to(controls.target, {
         duration: 4,
-        x: 45,
-        y: -252,
-        z: -174,
+        x: 85,
+        y: -664,
+        z: -143,
         ease: "sine.out",
         onUpdate: function () {
             controls.update();

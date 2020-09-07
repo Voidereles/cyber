@@ -40,6 +40,37 @@ $('.refer__carousel').owlCarousel({
     }
 });
 
+$('.news__carousel').owlCarousel({
+    loop: true,
+    dots: true,
+    lazyLoad: true,
+    margin: 25,
+    responsiveClass: true,
+    autoplay: false,
+    autoplayHoverPause: true,
+    responsive: {
+        0: {
+            items: 1,
+            margin: 15,
+            nav: true
+        },
+        600: {
+            items: 2,
+            nav: false
+        },
+        1000: {
+            items: 4,
+            nav: false,
+        },
+        1900: {
+            items: 5,
+            nav: true,
+            loop: false
+        }
+    }
+});
+
+
 
 
 const $window = $(window);

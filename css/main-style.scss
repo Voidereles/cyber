@@ -469,9 +469,9 @@ body {
         border-top-left-radius: 5%;
         border-top-right-radius: 5%;
         width: calc(100% + 112px + 5rem);
-        background: rgb(50, 50, 50);
-        background: linear-gradient(180deg, rgba(50, 50, 50, 0.0) 0%, rgba(38, 38, 38, 0.9335086085215336) 12%, rgba(35, 35, 35, 0.9839287765887605) 25%, rgba(32, 32, 32, 1) 34%);
+        background: rgba(32, 32, 32, 1);
         left: calc((112px + 5rem) * (-1));
+        border-top: 1px solid rgba(0, 0, 0, 0.15);
         z-index: 0;
     }
 
@@ -566,6 +566,63 @@ body {
     }
 }
 
+.news {
+    background-color: white;
+    margin-top: 20vh;
+    position: relative;
+    z-index: 2;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    color: $darkBlue;
+
+
+    &__item-container {
+        box-shadow: 0px 1px 4px 0px rgba(27, 27, 27, 0.2);
+        padding: 1.5rem 1.7rem 3rem 1.7rem;
+        border-radius: 0.5rem;
+        margin: 2rem 0 3rem 0;
+        position: relative;
+    }
+
+    &__item {
+        overflow: hidden;
+        height: 180px;
+    }
+
+    &__data {
+        font-size: 0.7rem;
+        font-weight: 300;
+    }
+
+    &__heading {
+        font-size: $fontSizeBodyM;
+    }
+
+    &__text {
+        font-size: $fontSizeBodyXS;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        opacity: 0.6;
+    }
+
+    &__btn {
+        position: absolute;
+        bottom: -1rem;
+        width: calc(100% - 3.5rem);
+        background: $darkBg;
+        height: 42px;
+        padding-top: 0.5rem;
+        transition: 0.2s;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:hover {
+            transform: translateX(-50%) translateY(-4px);
+        }
+    }
+}
 
 .contact {
     background-color: transparent;
@@ -580,12 +637,12 @@ body {
         left: -25%;
         top: -40%;
         width: 150%;
-        height: 75%;
+        height: 85%;
         -moz-transform: rotate(-3deg);
         -o-transform: rotate(-3deg);
         -ms-transform: rotate(-3deg);
         -webkit-transform: rotate(-3deg);
-        transform: rotate(-7deg);
+        transform: rotate(7deg);
         z-index: 0;
     }
 
@@ -596,6 +653,8 @@ body {
         border-radius: 4px;
         overflow: hidden;
         min-height: 200px;
+        max-width: 540px;
+        margin-left: auto;
         margin-top: 5rem;
     }
 
@@ -647,16 +706,16 @@ body {
     &__info {
         padding: 1rem;
         margin-top: 5rem;
-
-
+        margin-right: auto;
+        max-width: 540px;
     }
 
     &__link {
         color: $rgbWhite;
-        transition:0.3s;
+        transition: 0.3s;
 
         svg path {
-            transition:0.3s;
+            transition: 0.3s;
         }
 
         &:hover,
