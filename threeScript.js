@@ -126,7 +126,9 @@ function init() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x111111);
 
-    scene.fog = new THREE.Fog(0x111111, 200, 1000);
+
+
+    scene.fog = new THREE.Fog(0x111111, 300, 850);
 
     lightA = new THREE.AmbientLight(0xfffffe, 0.1);
     scene.add(lightA);
@@ -269,7 +271,7 @@ function init() {
         color: lightD.color.getHex(),
         shadowMapSizeWidth: 4096,
         shadowMapSizeHeight: 4096,
-
+        // backgroundColor: scene.background.color.getHex(),
         mapsEnabled: true
         //pobieramy tu te informacje co już są
     };
@@ -301,8 +303,6 @@ function init() {
     //hemisphere
 
 
-
-
     //directionalLight
     const directionalLightFolder = gui.addFolder('THREE.DirectionalLight');
     directionalLightFolder.add(lightD.position, "x", -500, 500, 1);
@@ -330,13 +330,31 @@ function init() {
 
 
 
-
-
-
-
-
     gui.add(buttonDecreaseLogo, "add").name('smaller logo gsap animation');
     gui.add(buttonIncreaseLogo, "add").name('bigger logo gsap animation');
+
+    // gui.addColor(data, 'color').onChange(() => {
+    //     scene.background.color.setHex(Number(data.color.toString().replace('#', '0x')));
+    // });
+
+
+
+    // const backgroundColorFolder = gui.addFolder('THREE.Color');
+
+    // gui.addColor(data, 'backgroundColor').onChange(() => {
+    //     scene.background.backgroundColor.setHex(Number(data.backgroundColor.toString().replace('#', '0x')));
+    // })
+    // backgroundColorFolder.addColor(data, 'backgroundColor').onChange(() => {
+    //     scene.background.backgroundColor.setHex(Number(data.backgroundColor.toString().replace('#', '0x')));
+    // });
+
+    // scene.background = new THREE.Color(0x111111);
+    // gui.add(scene.background, 'color')
+
+
+
+    gui.add(scene.fog, 'near', 1, 1500).name('fog.near');
+    gui.add(scene.fog, 'far', 1, 1500).name('fog.near');
 
     gui.add(camera.position, 'x', -720, 720).name('cameraPosition x');
     gui.add(camera.position, 'y', -720, 720).name('cameraPosition y');
