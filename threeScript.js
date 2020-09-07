@@ -52,20 +52,35 @@ const DecreaseLogoSize = function () {
 
 //export because of module!!! big brain time https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 const IncreaseLogoSize = function () {
+    gsap.from(camera.position, {
+        x: -49,
+        y: 720,
+        z: 300
+    });
+
     gsap.to(camera, {
         duration: 4,
-        zoom: 1,
         ease: "sine.out",
         onUpdate: function () {
             camera.updateProjectionMatrix();
         }
     });
 
+    gsap.to(camera.position, {
+        duration: 4,
+        x: 123,
+        y: 248,
+        z: 201,
+        onUpdate: function () {
+            update();
+        }
+    })
+
     gsap.to(controls.target, {
         duration: 4,
-        x: 245,
-        y: -50,
-        z: -100,
+        x: 45,
+        y: -252,
+        z: -174,
         ease: "sine.out",
         onUpdate: function () {
             controls.update();
@@ -101,7 +116,7 @@ function init() {
     document.body.appendChild(container);
 
     camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 2000);
-    camera.position.set(250, 300, 300);
+    camera.position.set(-49, 720, 300);
 
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x111111);
@@ -210,23 +225,23 @@ function init() {
     gsap.registerPlugin(CustomEase);
 
 
-    // if (window.pageYOffset < window.innerHeight / 3) {
-    //     IncreaseLogoSize();
-    //     console.log("increase no scroll");
-    // } else {
-    //     DecreaseLogoSize();
-    //     console.log('decrease no scroll');
-    // }
+    if (window.pageYOffset < window.innerHeight / 3) {
+        IncreaseLogoSize();
+        console.log("increase no scroll");
+    } else {
+        DecreaseLogoSize();
+        console.log('decrease no scroll');
+    }
 
-    // $(window).scroll(function () {
-    //     if (window.pageYOffset >= window.innerHeight / 3) {
-    //         DecreaseLogoSize();
-    //         console.log("decrease");
-    //     } else {
-    //         IncreaseLogoSize();
-    //         console.log("increase");
-    //     }
-    // }); 
+    $(window).scroll(function () {
+        if (window.pageYOffset >= window.innerHeight / 3) {
+            DecreaseLogoSize();
+            console.log("decrease");
+        } else {
+            IncreaseLogoSize();
+            console.log("increase");
+        }
+    });
 
     const buttonDecreaseLogo = {
         add: function () {
