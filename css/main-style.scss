@@ -44,6 +44,7 @@ $fontSizeH3: 1.625rem;
 $fontSizeBodyL: 1.25rem;
 $fontSizeBodyM: 1.125rem;
 $fontSizeBodyS: 1rem;
+$fontSizeBodyXS: 0.8rem;
 $lineHeightTitle: 1.1;
 $lineHeightBody: 1.5;
 $maxWidthS: 480px;
@@ -467,12 +468,11 @@ body {
         border-top-left-radius: 5%;
         border-top-right-radius: 5%;
         width: calc(100% + 112px + 5rem);
-        background-color: darken($color: $darkBg, $amount: 10%);
+        background: rgb(50, 50, 50);
+        background: linear-gradient(180deg, rgba(50, 50, 50, 0.7990548270089286) 0%, rgba(38, 38, 38, 0.9335086085215336) 12%, rgba(35, 35, 35, 0.9839287765887605) 25%, rgba(32, 32, 32, 1) 34%);
         left: calc((112px + 5rem) * (-1));
         z-index: 0;
     }
-
-    &__headings {}
 
     &__heading {
         font-size: $fontSizeH2;
@@ -491,6 +491,71 @@ body {
         font-weight: $fontWeightRegular;
         margin: $space3XL 0 $spaceL 0;
         text-align: center;
+    }
+
+    &__carousel {
+        margin-top: 4rem;
+    }
+
+    &__company {
+        transition: 0.4s ease;
+
+
+
+        &-container {
+            padding: 1.5rem 1.7rem 3rem 1.7rem;
+            margin: 0.25rem;
+            background: $darkBg;
+            border-radius: 1rem;
+            overflow-y: hidden;
+            max-height: 330px;
+            background: linear-gradient(145deg, #343434, #2c2c2c);
+            box-shadow: -1px -1px 4px 1px rgba(27, 27, 27, 0.7);
+
+            &:hover {
+                .refer__company {
+                    transform: translateY(-222px);
+                }
+
+                .refer__company-logo {
+                    transform: translateY(-50px);
+                }
+
+                .refer__company-text {
+                    transform: translateY(-2rem);
+                }
+            }
+        }
+
+        &-logo {
+            max-height: 222px;
+            transition: 0.4s;
+            margin-bottom: 0.75rem;
+        }
+
+        &-name {
+            text-align: center;
+            letter-spacing: 0.7px;
+            position: relative;
+            transition: 0.4s;
+            margin-bottom: 4rem;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 1px;
+                background-color: rgba(255, 255, 255, 0.5);
+                position: absolute;
+                bottom: -12px;
+                left: 0;
+            }
+        }
+
+        &-text {
+            text-align: justify;
+            line-height: 1.7;
+            font-size: $fontSizeBodyXS;
+        }
     }
 }
 
