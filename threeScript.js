@@ -15,7 +15,7 @@ import {
 
 let threeJSContainer;
 var container, controls;
-var camera, scene, renderer, light;
+var camera, scene, renderer, light, mixer;
 var helper;
 
 
@@ -72,8 +72,8 @@ const IncreaseLogoSize = function () {
         }
     });
 }
-window.DecreaseLogoSize = DecreaseLogoSize; //window, żeby móc odwołać się w konsoli. Tylko do debugowania!
-window.IncreaseLogoSize = IncreaseLogoSize;
+// window.DecreaseLogoSize = DecreaseLogoSize; //window, żeby móc odwołać się w konsoli. Tylko do debugowania!
+// window.IncreaseLogoSize = IncreaseLogoSize;
 
 
 init();
@@ -85,6 +85,17 @@ function init() {
     container.id = "threeJSContainer";
     container.classList.add('threeJS__container');
     threeJSContainer = document.getElementById('threeJSContainer');
+
+
+    const loadingManager = new THREE.LoadingManager(() => {
+
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.classList.add('fade-out');
+
+        // optional: remove loader from DOM via event listener
+        loadingScreen.addEventListener('transitionend', onTransitionEnd);
+
+    });
 
     document.body.appendChild(container);
 
@@ -128,8 +139,11 @@ function init() {
     // scene.add( grid );
 
     // model
-    var loader = new FBXLoader();
+    var loader = new FBXLoader(loadingManager);
     loader.load('phlgroup.FBX', function (object) {
+
+
+        mixer = new THREE.AnimationMixer(object);
         object.traverse(function (child) {
 
             if (child.isMesh) {
@@ -144,9 +158,6 @@ function init() {
         scene.add(object);
 
     });
-
-
-
 
 
 
@@ -190,36 +201,28 @@ function init() {
 
 
 
-
-
-
-
-
-
-
-
     window.addEventListener('resize', onWindowResize, false);
 
     gsap.registerPlugin(CustomEase);
 
 
-    if (window.pageYOffset < window.innerHeight / 3) {
-        IncreaseLogoSize();
-        console.log("increase no scroll");
-    } else {
-        DecreaseLogoSize();
-        console.log('decrease no scroll');
-    }
+    // if (window.pageYOffset < window.innerHeight / 3) {
+    //     IncreaseLogoSize();
+    //     console.log("increase no scroll");
+    // } else {
+    //     DecreaseLogoSize();
+    //     console.log('decrease no scroll');
+    // }
 
-    $(window).scroll(function () {
-        if (window.pageYOffset >= window.innerHeight / 3) {
-            DecreaseLogoSize();
-            console.log("decrease");
-        } else {
-            IncreaseLogoSize();
-            console.log("increase");
-        }
-    });
+    // $(window).scroll(function () {
+    //     if (window.pageYOffset >= window.innerHeight / 3) {
+    //         DecreaseLogoSize();
+    //         console.log("decrease");
+    //     } else {
+    //         IncreaseLogoSize();
+    //         console.log("increase");
+    //     }
+    // }); 
 
     const buttonDecreaseLogo = {
         add: function () {
@@ -254,6 +257,12 @@ function init() {
 }
 
 
+function onTransitionEnd(event) {
+
+    event.target.remove();
+
+}
+
 function onWindowResize() {
 
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -264,32 +273,32 @@ function onWindowResize() {
 }
 
 
-function render() {
-    const canvas = renderer.domElement;
-    camera.aspect = canvas.clientWidth / canvas.clientHeight;
-    camera.updateProjectionMatrix();
+// function render() {
+//     const canvas = renderer.domElement;
+//     camera.aspect = canvas.clientWidth / canvas.clientHeight;
+//     camera.updateProjectionMatrix();
 
-    // camera.lookAt( scene.position );
-}
+//     // camera.lookAt( scene.position );
+// }
 
 
 function update() {
     controls.update();
-
-    targetCamera.x += (-mouseXpercent * 35 - targetCamera.x) / 10;
-    targetCamera.y += (-(mouseYpercent * 35) + 1 - targetCamera.y) / 15;
-
-    camera.lookAt(targetCamera);
 }
 
 function animate() {
 
 
     update();
+    targetCamera.x += (-mouseXpercent * 135 - targetCamera.x) / 10;
+    targetCamera.y += (-(mouseYpercent * 135) + 1 - targetCamera.y) / 15;
+
+    // camera.lookAt(targetCamera);
 
     requestAnimationFrame(animate, renderer.domElement);
 
     var delta = clock.getDelta();
+    if (mixer !== undefined) mixer.update(delta);
 
     renderer.render(scene, camera);
 
