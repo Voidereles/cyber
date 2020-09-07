@@ -15,6 +15,7 @@ body {
   margin: 0;
   width: 100vw;
   overflow-x: hidden;
+  position: relative;
 }
 
 * {
@@ -337,6 +338,7 @@ body {
   margin-top: 100vh;
   margin-left: calc(112px + 5rem);
   position: relative;
+  z-index: 1;
 }
 
 .dg main a {
@@ -417,10 +419,12 @@ body {
   margin: 0 0 32px 0;
   text-transform: uppercase;
   text-align: center;
+  max-width: 1024px;
+  margin: auto;
 }
 
 .refer__subheading {
-  font-size: 1.25rem;
+  font-size: 2.375rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
@@ -594,6 +598,8 @@ body {
   max-width: 540px;
   margin-left: auto;
   margin-top: 5rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .contact__fieldset {
@@ -667,5 +673,38 @@ body {
 
 .contact__link:hover svg path, .contact__link:focus svg path, .contact__link:active svg path {
   fill: white;
+}
+
+.map {
+  background-image: url("../images-icons/map.PNG");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 85vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.footer {
+  margin-top: 3rem;
+  font-size: 0.7rem;
+  background-color: black;
+  color: grey;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+.footer__href {
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.footer__href:hover {
+  color: #102a43;
 }
 /*# sourceMappingURL=main-style.css.map */

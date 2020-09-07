@@ -73,7 +73,7 @@ const IncreaseLogoSize = function () {
 
     gsap.to(camera.position, {
         duration: 4,
-        x: 107,
+        x: 85,
         y: 357,
         z: 91,
         onUpdate: function () {
@@ -128,7 +128,8 @@ function init() {
 
 
 
-    scene.fog = new THREE.Fog(0x111111, 300, 850);
+    scene.fog = new THREE.Fog(0x111111, 300, 900);
+    //responsywnosc z fog
 
     lightA = new THREE.AmbientLight(0xfffffe, 0.1);
     scene.add(lightA);
@@ -312,12 +313,12 @@ function init() {
     directionalLightFolder.addColor(data, 'color').onChange(() => {
         lightD.color.setHex(Number(data.color.toString().replace('#', '0x')));
     });
-    directionalLightFolder.add(lightD.shadow.camera, "left", -300, 300, 1).onChange(() => light.shadow.camera.updateProjectionMatrix())
-    directionalLightFolder.add(lightD.shadow.camera, "right", -300, 300, 1).onChange(() => light.shadow.camera.updateProjectionMatrix())
-    directionalLightFolder.add(lightD.shadow.camera, "top", -300, 300, 1).onChange(() => light.shadow.camera.updateProjectionMatrix())
-    directionalLightFolder.add(lightD.shadow.camera, "bottom", -300, 300, 1).onChange(() => light.shadow.camera.updateProjectionMatrix())
-    directionalLightFolder.add(lightD.shadow.camera, "near", 0.1, 300).onChange(() => light.shadow.camera.updateProjectionMatrix())
-    directionalLightFolder.add(lightD.shadow.camera, "far", 0.1, 300).onChange(() => light.shadow.camera.updateProjectionMatrix())
+    directionalLightFolder.add(lightD.shadow.camera, "left", -300, 300, 1).onChange(() => lightD.shadow.camera.updateProjectionMatrix())
+    directionalLightFolder.add(lightD.shadow.camera, "right", -300, 300, 1).onChange(() => lightD.shadow.camera.updateProjectionMatrix())
+    directionalLightFolder.add(lightD.shadow.camera, "top", -300, 300, 1).onChange(() => lightD.shadow.camera.updateProjectionMatrix())
+    directionalLightFolder.add(lightD.shadow.camera, "bottom", -300, 300, 1).onChange(() => lightD.shadow.camera.updateProjectionMatrix())
+    directionalLightFolder.add(lightD.shadow.camera, "near", 0.1, 300).onChange(() => lightD.shadow.camera.updateProjectionMatrix())
+    directionalLightFolder.add(lightD.shadow.camera, "far", 0.1, 300).onChange(() => lightD.shadow.camera.updateProjectionMatrix())
     directionalLightFolder.add(data, "shadowMapSizeWidth", [256, 512, 1024, 2048, 4096]).onChange(() => updateShadowMapSize())
     directionalLightFolder.add(data, "shadowMapSizeHeight", [256, 512, 1024, 2048, 4096]).onChange(() => updateShadowMapSize())
     //directionalLight
@@ -354,7 +355,7 @@ function init() {
 
 
     gui.add(scene.fog, 'near', 1, 1500).name('fog.near');
-    gui.add(scene.fog, 'far', 1, 1500).name('fog.near');
+    gui.add(scene.fog, 'far', 1, 1500).name('fog.far');
 
     gui.add(camera.position, 'x', -720, 720).name('cameraPosition x');
     gui.add(camera.position, 'y', -720, 720).name('cameraPosition y');

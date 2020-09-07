@@ -1,3 +1,4 @@
+new WOW().init();
 $('.about__carousel').owlCarousel({
     loop: true,
     dots: true,
@@ -15,7 +16,7 @@ $('.refer__carousel').owlCarousel({
     lazyLoad: true,
     margin: 15,
     responsiveClass: true,
-    autoplay: false,
+    autoplay: true,
     autoplayHoverPause: true,
     responsive: {
         0: {
@@ -46,7 +47,7 @@ $('.news__carousel').owlCarousel({
     lazyLoad: true,
     margin: 25,
     responsiveClass: true,
-    autoplay: false,
+    autoplay: true,
     autoplayHoverPause: true,
     responsive: {
         0: {
@@ -65,7 +66,6 @@ $('.news__carousel').owlCarousel({
         1900: {
             items: 5,
             nav: true,
-            loop: false
         }
     }
 });
@@ -88,7 +88,6 @@ function isScrolledIntoView(elem, $window) {
 }
 
 $(document).ready(function () {
-    new WOW().init();
 
     if (isScrolledIntoView(referDiv, $window) && animationEnded == false) {
         referDiv.addClass("refer__animation-container--animated")
@@ -96,6 +95,32 @@ $(document).ready(function () {
         animationEnded = true;
     }
 
+    // let mapDiv = document.getElementById("map");
+    // let contactForm = document.getElementById("contactForm")
+
+    // // This handler will be executed only once when the cursor
+    // // moves over the unordered list
+    // mapDiv.addEventListener("mouseenter", function () {
+    //     // highlight the mouseenter target
+    //     contactForm.style.opacity = 0;
+
+    // });
+
+    // mapDiv.addEventListener("mouseout", function () {
+    //     // highlight the mouseenter target
+    //     contactForm.style.opacity = 1;
+
+    // });
+
+    // $(function () {
+    //     $('.map').hover(function () {
+    //         $('.contact__form-container').fadeTo(400, .05);
+    //         console.log('hover map')
+    //     }, function () {
+    //         $('.contact__form-container').fadeTo(400, 1);
+    //         console.log('unhover map')
+    //     });
+    // });
 })
 
 $(document).on("scroll", function () {
