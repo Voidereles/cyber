@@ -337,6 +337,7 @@ body {
 .main-container {
   margin-top: 100vh;
   margin-left: calc(112px + 5rem);
+  margin-right: 7px;
   position: relative;
   z-index: 1;
 }
@@ -352,6 +353,11 @@ body {
 .about__heading {
   display: block;
   position: relative;
+  font-size: 2.375rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  margin: 64px 0 24px 0;
 }
 
 .about__text {
@@ -504,6 +510,222 @@ body {
 .refer__btn {
   background-color: #313131;
   border-radius: 12px;
+}
+
+.jobs {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  width: calc(100% - $leftDistance);
+  min-height: 60vh;
+  padding-left: calc(112px + 5rem);
+  margin-left: calc((112px + 5rem) * (-1));
+}
+
+.jobs::before {
+  background-color: #202020;
+  position: absolute;
+  content: '';
+  pointer-events: none;
+  left: -25%;
+  top: -200px;
+  width: 150%;
+  height: 290px;
+  -webkit-transform: rotate(-3deg);
+  transform: rotate(7deg);
+  z-index: 0;
+}
+
+.jobs::after {
+  background-color: #202020;
+  position: absolute;
+  content: '';
+  pointer-events: none;
+  left: -25%;
+  bottom: -210px;
+  width: 150%;
+  height: 300px;
+  -webkit-transform: rotate(-3deg);
+  transform: rotate(-7deg);
+  z-index: 0;
+}
+
+.jobs__heading {
+  font-size: 1rem;
+  color: #7c7c7c;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  margin-bottom: 80px;
+  padding-top: 200px;
+}
+
+.jobs__heading::before {
+  content: 'Job Offers';
+  position: absolute;
+  font-size: 9vw;
+  width: 100%;
+  left: 50%;
+  color: rgba(255, 255, 255, 0.8);
+  bottom: -60%;
+  opacity: 0.2;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: 0;
+}
+
+.jobs__heading::after {
+  top: 15px;
+  left: 50%;
+  bottom: 0;
+  position: relative;
+  width: 35px;
+  height: 2px;
+  content: "";
+  display: inherit;
+  background-color: #102a43;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.jobs__container {
+  padding-bottom: 200px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(270px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-gap: 20px;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.jobs__item {
+  position: relative;
+  padding: 40px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  overflow: hidden;
+  z-index: 3000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: flex;
+}
+
+.jobs__item:hover, .jobs__item:focus, .jobs__item:active {
+  color: #102a43;
+  text-decoration: none;
+}
+
+.jobs__item:hover {
+  border: 1px solid #102a43;
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+  -webkit-box-shadow: 0 36px 64px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 36px 64px 0 rgba(0, 0, 0, 0.1);
+}
+
+.jobs__item:hover .jobs__check {
+  width: 200px;
+  border-radius: 100px;
+  background-color: #102a43;
+}
+
+.jobs__item:hover .jobs__check-text {
+  left: 16px;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.jobs__item:hover .jobs__check svg {
+  left: initial;
+  right: 16px;
+}
+
+.jobs__item:hover .jobs__check svg path {
+  fill: rgba(255, 255, 255, 0.8);
+}
+
+.jobs__job-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #102a43;
+  margin-bottom: 0;
+}
+
+.jobs__salary {
+  color: #999;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.jobs__town {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: black;
+}
+
+.jobs__check {
+  border-radius: 50%;
+  border: 1px solid #102a43;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  place-self: flex-end;
+  place-content: flex-end;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.jobs__check-text {
+  position: absolute;
+  left: -120px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: #102a43;
+}
+
+.jobs__check svg {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  -webkit-transition: right 0s;
+  transition: right 0s;
+}
+
+.jobs__check svg path {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  fill: #102a43;
 }
 
 .news {
@@ -679,10 +901,10 @@ body {
   background-image: url("../images-icons/map.PNG");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 85vh;
+  height: 90vh;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 112px;
   left: 0;
   z-index: 0;
 }
@@ -693,6 +915,7 @@ body {
   background-color: black;
   color: grey;
   width: 100%;
+  height: 112px;
   position: relative;
   bottom: 0;
   left: 0;
@@ -706,5 +929,25 @@ body {
 
 .footer__href:hover {
   color: #102a43;
+}
+
+.modal {
+  color: #102a43;
+}
+
+.modal .btn-secondary {
+  background: #313131;
+}
+
+.modal .btn-primary {
+  background: #102a43;
+}
+
+.modal-header {
+  color: #102a43;
+}
+
+.dg-ac {
+  z-index: 50;
 }
 /*# sourceMappingURL=main-style.css.map */
