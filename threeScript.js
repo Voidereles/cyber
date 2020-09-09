@@ -31,32 +31,15 @@ let getColorHex;
 var clock = new THREE.Clock();
 
 const colorChange = function (getColorTheme) {
-    getColorHex = getColorTheme.toString().replace('#', '0x');
-    // var colorValue = parseInt(getColorTheme.replace("#", "0x"), 16);
-    // var colored = new THREE.Color(colorValue)
-    // let g = new THREE.PlaneBufferGeometry(150, 150);
-    // let m = new THREE.MeshBasicMaterial({
-    //     color: "red"
-    // });
-    // let o = new THREE.Mesh(g, m);
-    lightD.color.setHex(Number(getColorHex))
-    // scene.add(o);
-    // let colorTo = new THREE.Color(getColorHex);
-    // gsap.to(lightD, {
-    //     duration: 5,
-    //     color: colorTo
-    // });
-
-    // let colorTo = new THREE.Color('"' + getColorTheme + '"');
-    // let gs = gsap.to(m.color, {
-    //     r: colorTo.r,
-    //     b: colorTo.b,
-    //     duration: 4
-    // });
-    // gs.play();
-
-    // console.log(getColorTheme);
-    // console.log(getColorHex);
+    const colorTo = new THREE.Color(getColorTheme);
+    // let colorTransition = 
+    gsap.to(lightD.color, {
+        r: colorTo.r,
+        g: colorTo.g,
+        b: colorTo.b,
+        duration: 0.5
+    });
+    // colorTransition.play();
 }
 
 const DecreaseLogoSize = function () {
