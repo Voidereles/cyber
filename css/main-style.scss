@@ -419,6 +419,154 @@ body {
     }
 }
 
+.projects {
+    padding-top: calc(45vh - 50px);
+    padding-bottom: calc(45vh - 85px);
+
+    &__heading {
+        font-size: 12px;
+        letter-spacing: 4px;
+        font-weight: 300;
+        color: rgba(187, 194, 229, .3);
+        text-transform: uppercase;
+        padding-bottom: 4rem;
+    }
+
+    &__title {
+        &:before {
+            content: '';
+            background-color: #fff;
+            box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #96771b99;
+            transition: 0.8s;
+            display: block;
+            position: absolute;
+            bottom: 160px;
+            right: -10vw;
+            width: 0px;
+            height: 0px;
+            border-radius: 50%;
+            opacity: 0;
+            z-index: 2;
+        }
+
+
+        &::after {
+            content: '';
+            background: url('../images-icons/SVG/1000ppi/Zasób\ 2.png');
+            width: 40vmin;
+            height: 40vmin;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            right: 0;
+            bottom: calc(160px - 20vmin);
+            display: block;
+            opacity: 0;
+            z-index: 2;
+            transition: .6s cubic-bezier(.165, .84, .44, 1);
+
+        }
+
+    }
+
+    &__wunderprint {
+        &:before {
+            box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #1739d199;
+        }
+    }
+
+    &__abiprofis {
+        &:before {
+            box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #DD870077;
+        }
+    }
+
+    &__bluzy-szkolne {
+        &:before {
+            box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #04432699;
+        }
+    }
+
+    &__item {
+        position: relative;
+        height: 140px;
+        width: 100%;
+        color: rgba(187, 194, 229, .3);
+        font-size: 5.7rem;
+        line-height: 66px;
+        font-weight: 300;
+        transition: .6s cubic-bezier(.165, .84, .44, 1);
+        z-index: 1;
+
+
+        &:hover {
+            color: white;
+            text-decoration: none;
+            z-index: 3;
+
+            .projects {
+                &__time {
+                    text-decoration: none;
+                }
+
+                &__description {
+                    opacity: 1;
+                    bottom: 100px;
+
+                }
+
+                &__title {
+                    &::before {
+                        opacity: 0.7;
+                        bottom: -20px;
+                        right: 160px;
+                    }
+
+                    &::after {
+                        opacity: 0.8;
+                    }
+                }
+            }
+
+
+        }
+    }
+
+
+    &__time {
+        font-family: Gilroy, Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: .7142857143rem;
+        letter-spacing: .36em;
+        line-height: 1;
+        text-transform: uppercase;
+        font-weight: 300;
+
+    }
+
+    &__description {
+        position: fixed;
+        right: 45px;
+        bottom: -100px;
+        height: auto;
+        width: 300px;
+        z-index: 1;
+        text-align: right;
+        opacity: 0;
+        font-family: Heebo, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        color: #fff;
+        font-size: 1rem;
+        line-height: 1.3636363636;
+        transition: .6s cubic-bezier(.165, .84, .44, 1);
+        // opacity: 1;
+        // bottom: 100px;
+
+    }
+}
+
 .refer {
     background-color: transparent;
     position: relative;
@@ -633,7 +781,7 @@ body {
         &::before {
             content: 'Job Offers';
             position: absolute;
-            font-size: 9vw;
+            font-size: 8rem;
             width: 100%;
             left: 50%;
             color: $rgbWhite08;

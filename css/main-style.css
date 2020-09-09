@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body {
   background: transparent;
@@ -402,6 +403,138 @@ body {
           justify-content: center;
 }
 
+.projects {
+  padding-top: calc(45vh - 50px);
+  padding-bottom: calc(45vh - 85px);
+}
+
+.projects__heading {
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 300;
+  color: rgba(187, 194, 229, 0.3);
+  text-transform: uppercase;
+  padding-bottom: 4rem;
+}
+
+.projects__title:before {
+  content: '';
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #96771b99;
+          box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #96771b99;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  display: block;
+  position: absolute;
+  bottom: 160px;
+  right: -10vw;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 2;
+}
+
+.projects__title::after {
+  content: '';
+  background: url("../images-icons/SVG/1000ppi/Zasób 2.png");
+  width: 40vmin;
+  height: 40vmin;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  bottom: calc(160px - 20vmin);
+  display: block;
+  opacity: 0;
+  z-index: 2;
+  -webkit-transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.projects__wunderprint:before {
+  -webkit-box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #1739d199;
+          box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #1739d199;
+}
+
+.projects__abiprofis:before {
+  -webkit-box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #DD870077;
+          box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #DD870077;
+}
+
+.projects__bluzy-szkolne:before {
+  -webkit-box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #04432699;
+          box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #04432699;
+}
+
+.projects__item {
+  position: relative;
+  height: 140px;
+  width: 100%;
+  color: rgba(187, 194, 229, 0.3);
+  font-size: 5.7rem;
+  line-height: 66px;
+  font-weight: 300;
+  -webkit-transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 1;
+}
+
+.projects__item:hover {
+  color: white;
+  text-decoration: none;
+  z-index: 3;
+}
+
+.projects__item:hover .projects__time {
+  text-decoration: none;
+}
+
+.projects__item:hover .projects__description {
+  opacity: 1;
+  bottom: 100px;
+}
+
+.projects__item:hover .projects__title::before {
+  opacity: 0.7;
+  bottom: -20px;
+  right: 160px;
+}
+
+.projects__item:hover .projects__title::after {
+  opacity: 0.8;
+}
+
+.projects__time {
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: .7142857143rem;
+  letter-spacing: .36em;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.projects__description {
+  position: fixed;
+  right: 45px;
+  bottom: -100px;
+  height: auto;
+  width: 300px;
+  z-index: 1;
+  text-align: right;
+  opacity: 0;
+  font-family: Heebo, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.3636363636;
+  -webkit-transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 .refer {
   background-color: transparent;
   position: relative;
@@ -563,7 +696,7 @@ body {
 .jobs__heading::before {
   content: 'Job Offers';
   position: absolute;
-  font-size: 9vw;
+  font-size: 8rem;
   width: 100%;
   left: 50%;
   color: rgba(255, 255, 255, 0.8);

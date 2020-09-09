@@ -29,6 +29,16 @@ let mouseYpercent = 0;
 
 var clock = new THREE.Clock();
 
+const colorChange = function (getColorTheme) {
+    getColorTheme = getColorTheme.toString().replace('#', '0x');
+    // gsap.to(
+    lightD.color.setHex(Number(getColorTheme))
+    // );
+    // console.log(12);
+
+    // lightD.color.setHex(Number(data.color.toString().replace('#', '0x')));
+}
+
 const DecreaseLogoSize = function () {
     gsap.to(camera, {
         duration: 4,
@@ -60,6 +70,7 @@ const DecreaseLogoSize = function () {
         }
     });
 }
+
 
 //export because of module!!! big brain time https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 const IncreaseLogoSize = function () {
@@ -125,7 +136,7 @@ function init() {
 
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x111111);
-
+    // scene.background.color = 0xccaacc;
 
 
     scene.fog = new THREE.Fog(0x111111, 300, 900);
@@ -147,9 +158,9 @@ function init() {
     lightD.shadow.camera.bottom = -200;
     lightD.shadow.camera.left = -200;
     lightD.shadow.camera.right = 300;
-    // scene.add(lightD);
-    var helperD = new THREE.DirectionalLightHelper(lightD, 5);
-    scene.add(helperD);
+    scene.add(lightD);
+    // var helperD = new THREE.DirectionalLightHelper(lightD, 5);
+    // scene.add(helperD);
 
     // ground
     var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(2000, 2000), new THREE.MeshPhongMaterial({
@@ -368,9 +379,25 @@ function init() {
     gui.add(controls.target, 'z', -720, 720).name('controlsTarget z');
     gui.closed = true;
 
+
+    let colorTheme;
     //pos rot and scale go into local transform matrix which is by default automatically updated
     //Projection Matrix only needs update after FOV changes
-
+    $(".projects__title").hover(
+        function () {
+            colorTheme = this.getAttribute("data-color");
+            // console.log(colorTheme);
+            // let colorTheme = '0x00ff00';
+            colorChange(colorTheme);
+        }
+    );
+    $(".projects__title").mouseleave(
+        function () {
+            // console.log(colorTheme);
+            // let colorTheme = '0x00ff00';
+            colorChange('#111111');
+        }
+    );
 
 }
 
@@ -392,8 +419,9 @@ function onWindowResize() {
 
 
 function update() {
-    // camera.lookAt(targetCamera); uncommenting will enable camera move on mouse move but disable controls target gui
+    // uncommenting will enable camera move on mouse move but disable controls target gui
     controls.update();
+    // camera.lookAt(targetCamera);
     camera.updateProjectionMatrix();
 }
 
@@ -401,9 +429,10 @@ function animate() {
 
 
     update();
-    targetCamera.x += (-mouseXpercent * 135 - targetCamera.x) / 10;
-    targetCamera.y += (-(mouseYpercent * 135) + 1 - targetCamera.y) / 15;
+    targetCamera.x += (-mouseXpercent * 15 - targetCamera.x) / 10;
+    targetCamera.y += (-(mouseYpercent * 15) + 1 - targetCamera.y) / 15;
 
+    camera.lookAt(targetCamera);
     requestAnimationFrame(animate, renderer.domElement);
 
     var delta = clock.getDelta();
