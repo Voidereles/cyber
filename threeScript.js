@@ -168,9 +168,11 @@ function init() {
     // ground
     var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(2000, 2000), new THREE.MeshPhongMaterial({
         color: 0x333333,
-        depthWrite: false
+        depthWrite: true
     }));
+    //pi = 180 stopni
     mesh.rotation.x = -Math.PI / 2;
+    // mesh.rotation.z = 0.5
     mesh.receiveShadow = true;
     scene.add(mesh);
 
@@ -403,6 +405,7 @@ function init() {
         }
     );
 
+
 }
 
 
@@ -436,9 +439,15 @@ function animate() {
     // targetCamera.x += (-mouseXpercent * 15 - targetCamera.x) / 10;
     targetCamera.z += (-mouseYpercent * 15 - targetCamera.z) / 10;
     targetCamera.y += (-mouseXpercent * 55 - targetCamera.y) / 10;
+    // targetCamera.rotation += (-mouseXpercent * 55) / 10;
+    // mesh.rotation.y += (-mouseYpercent * 0.13 - mesh.rotation.y);
+
+    // mesh.rotateY(Math.random() * 360 * 0.01745327)
+    // mesh.translateZ(0
     // targetCamera.y += (-(mouseYpercent * 15) + 1 - targetCamera.y) / 15;
 
     camera.lookAt(targetCamera);
+    // camera.lookAt(mesh.position);
     requestAnimationFrame(animate, renderer.domElement);
 
     var delta = clock.getDelta();
