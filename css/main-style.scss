@@ -69,6 +69,7 @@ html,
 body {
     background: transparent;
     overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -367,7 +368,8 @@ body {
 .main-container {
     margin-top: 100vh;
     margin-left: calc(112px + 5rem);
-    margin-right: 7px;
+    // margin-right: 7px;
+    width: 100%;
     position: relative;
     z-index: 1;
 }
