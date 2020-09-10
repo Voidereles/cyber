@@ -2,6 +2,7 @@
 html,
 body {
   background: transparent;
+  overflow-x: hidden;
 }
 
 body {
@@ -648,38 +649,51 @@ body {
 .jobs {
   position: relative;
   background: rgba(255, 255, 255, 0.8);
-  width: calc(100% - $leftDistance);
+  width: calc(100% + 112px + 5rem);
   min-height: 60vh;
   padding-left: calc(112px + 5rem);
   margin-left: calc((112px + 5rem) * (-1));
 }
 
 .jobs::before {
-  background-color: #202020;
+  background-image: url("../images-icons/SVG/prostokat.svg");
   position: absolute;
   content: '';
   pointer-events: none;
-  left: -25%;
-  top: -200px;
-  width: 150%;
-  height: 290px;
-  -webkit-transform: rotate(-3deg);
-  transform: rotate(7deg);
+  left: -1px;
+  top: -53vh;
+  width: calc(100% + 2px);
+  height: 100%;
   z-index: 0;
+  background-size: contain;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+  background-repeat: no-repeat;
 }
 
 .jobs::after {
-  background-color: #202020;
+  background-image: url("../images-icons/SVG/prostokat.svg");
   position: absolute;
   content: '';
   pointer-events: none;
-  left: -25%;
-  bottom: -210px;
-  width: 150%;
-  height: 300px;
-  -webkit-transform: rotate(-3deg);
-  transform: rotate(-7deg);
+  left: -1px;
+  bottom: -53vh;
+  width: calc(100% + 2px);
+  height: 100%;
   z-index: 0;
+  background-size: contain;
+  -webkit-transform: scaleY(-0.5);
+          transform: scaleY(-0.5);
+  background-repeat: no-repeat;
+}
+
+.jobs__bottom-rectangle {
+  position: absolute;
+  bottom: -50%;
+  height: 50%;
+  width: calc(100% + 112px + 5rem);
+  background-color: #202020;
+  left: calc(-112px - 5rem);
 }
 
 .jobs__heading {

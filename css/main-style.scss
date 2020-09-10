@@ -68,6 +68,7 @@ $leftDistance: calc((112px + 5rem) * (-1));
 html,
 body {
     background: transparent;
+    overflow-x: hidden;
 }
 
 body {
@@ -729,43 +730,48 @@ body {
 .jobs {
     position: relative;
     background: $rgbWhite08;
-    width: calc(100% - $leftDistance);
+    width: calc(100% + 112px + 5rem);
     min-height: 60vh;
     padding-left: calc(112px + 5rem);
     margin-left: $leftDistance;
 
     &::before {
-        background-color: rgba(32, 32, 32, 1);
+        background-image: url('../images-icons/SVG/prostokat.svg');
         position: absolute;
         content: '';
         pointer-events: none;
-        left: -25%;
-        top: -200px;
-        width: 150%;
-        height: 290px;
-        -moz-transform: rotate(-3deg);
-        -o-transform: rotate(-3deg);
-        -ms-transform: rotate(-3deg);
-        -webkit-transform: rotate(-3deg);
-        transform: rotate(7deg);
+        left: -1px;
+        top: -53vh;
+        width: calc(100% + 2px);
+        height: 100%;
         z-index: 0;
+        background-size: contain;
+        transform: scaleY(0.5);
+        background-repeat: no-repeat;
     }
 
     &::after {
-        background-color: rgba(32, 32, 32, 1);
+        background-image: url('../images-icons/SVG/prostokat.svg');
         position: absolute;
         content: '';
         pointer-events: none;
-        left: -25%;
-        bottom: -210px;
-        width: 150%;
-        height: 300px;
-        -moz-transform: rotate(-3deg);
-        -o-transform: rotate(-3deg);
-        -ms-transform: rotate(-3deg);
-        -webkit-transform: rotate(-3deg);
-        transform: rotate(-7deg);
+        left: -1px;
+        bottom: -53vh;
+        width: calc(100% + 2px);
+        height: 100%;
         z-index: 0;
+        background-size: contain;
+        transform: scaleY(-0.5);
+        background-repeat: no-repeat;
+    }
+
+    &__bottom-rectangle {
+        position: absolute;
+        bottom: -50%;
+        height: 50%;
+        width: calc(100% + 112px + 5rem);
+        background-color: #202020;
+        left: calc(-112px - 5rem);
     }
 
     &__heading {

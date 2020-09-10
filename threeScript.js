@@ -435,7 +435,7 @@ function animate() {
     targetCamera.x += (-mouseXpercent * 15 - targetCamera.x) / 10;
     targetCamera.y += (-(mouseYpercent * 15) + 1 - targetCamera.y) / 15;
 
-    camera.lookAt(targetCamera);
+    // camera.lookAt(targetCamera);
     requestAnimationFrame(animate, renderer.domElement);
 
     var delta = clock.getDelta();
