@@ -451,22 +451,22 @@ body {
         }
 
 
-        &::after {
-            content: '';
-            background: url('../images-icons/SVG/1000ppi/Zasób\ 2.png');
-            width: 40vmin;
-            height: 40vmin;
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            right: 0;
-            bottom: calc(160px - 20vmin);
-            display: block;
-            opacity: 0;
-            z-index: 2;
-            transition: .6s cubic-bezier(.165, .84, .44, 1);
+        // &::after {
+        //     content: '';
+        //     background: url('../images-icons/SVG/1000ppi/Zasób\ 2.png');
+        //     width: 40vmin;
+        //     height: 40vmin;
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+        //     position: absolute;
+        //     right: 0;
+        //     bottom: calc(160px - 20vmin);
+        //     display: block;
+        //     opacity: 0;
+        //     z-index: 2;
+        //     transition: .6s cubic-bezier(.165, .84, .44, 1);
 
-        }
+        // }
 
     }
 
