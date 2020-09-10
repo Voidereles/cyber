@@ -619,7 +619,7 @@ body {
 }
 
 .jobs__top-degree, .jobs__bottom-degree {
-  width: 100%;
+  width: calc(100% + 112px + 5rem);
   margin-left: calc(-112px - 5rem);
   margin-top: -100px;
 }
