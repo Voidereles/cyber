@@ -223,7 +223,7 @@ body {
 
 .container-fluid {
     width: 100%;
-    max-width: 1600px;
+    max-width: 1700px;
 }
 
 
@@ -849,7 +849,8 @@ body {
     border-bottom-left-radius: 0.5rem;
     color: $rgbDarkBlue;
     margin-right: $leftMenuWidthMinus;
-    width: calc(100% + 144px);
+    // width: calc(100% + 144px);
+    // max-width: 1700px;
 
 
     &__item-container {
@@ -1070,4 +1071,10 @@ body {
 
 .dg-ac {
     z-index: 50;
+}
+
+@media (min-width: 1800px) {
+    .news {
+        margin-left: 12vw;
+    }
 }

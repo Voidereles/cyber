@@ -127,7 +127,7 @@ body {
 
 .container-fluid {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1700px;
 }
 
 .header {
@@ -825,7 +825,6 @@ body {
   border-bottom-left-radius: 0.5rem;
   color: #102a43;
   margin-right: -144px;
-  width: calc(100% + 144px);
 }
 
 .news__item-container {
@@ -1045,5 +1044,11 @@ body {
 
 .dg-ac {
   z-index: 50;
+}
+
+@media (min-width: 1800px) {
+  .news {
+    margin-left: 12vw;
+  }
 }
 /*# sourceMappingURL=main-style.css.map */
