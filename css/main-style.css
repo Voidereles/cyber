@@ -20,26 +20,6 @@ body {
   position: relative;
 }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.8) #111111;
-}
-
-/* Works on Chrome/Edge/Safari */
-*::-webkit-scrollbar {
-  width: 7px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #111111;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  border: 1px solid #111111;
-}
-
 #loading-screen {
   position: absolute;
   z-index: 9999;
@@ -638,36 +618,15 @@ body {
   margin-left: calc((112px + 5rem) * (-1));
 }
 
-.jobs::before {
-  background-image: url("../images-icons/SVG/prostokat.svg");
-  position: absolute;
-  content: '';
-  pointer-events: none;
-  left: -1px;
-  top: -53vh;
-  width: calc(100% + 2px);
-  height: 100%;
-  z-index: 0;
-  background-size: contain;
-  -webkit-transform: scaleY(0.5);
-          transform: scaleY(0.5);
-  background-repeat: no-repeat;
+.jobs__top-degree, .jobs__bottom-degree {
+  width: 100%;
+  margin-left: calc(-112px - 5rem);
+  margin-top: -100px;
 }
 
-.jobs::after {
-  background-image: url("../images-icons/SVG/prostokat.svg");
-  position: absolute;
-  content: '';
-  pointer-events: none;
-  left: -1px;
-  bottom: -53vh;
-  width: calc(100% + 2px);
-  height: 100%;
-  z-index: 0;
-  background-size: contain;
-  -webkit-transform: scaleY(-0.5);
-          transform: scaleY(-0.5);
-  background-repeat: no-repeat;
+.jobs__bottom-degree {
+  margin-top: 0;
+  margin-bottom: -100px;
 }
 
 .jobs__bottom-rectangle {

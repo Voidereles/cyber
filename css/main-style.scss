@@ -86,25 +86,25 @@ body {
     position: relative;
 }
 
-* {
-    scrollbar-width: thin;
-    scrollbar-color: $rgbWhite08 $rgbBackground;
-}
+// * {
+//     scrollbar-width: thin;
+//     scrollbar-color: $rgbWhite08 $rgbBackground;
+// }
 
-/* Works on Chrome/Edge/Safari */
-*::-webkit-scrollbar {
-    width: 7px;
-}
+// /* Works on Chrome/Edge/Safari */
+// *::-webkit-scrollbar {
+//     width: 7px;
+// }
 
-*::-webkit-scrollbar-track {
-    background: $rgbBackground;
-}
+// *::-webkit-scrollbar-track {
+//     background: $rgbBackground;
+// }
 
-*::-webkit-scrollbar-thumb {
-    background-color: $rgbWhite08;
-    border-radius: 20px;
-    border: 1px solid $rgbBackground;
-}
+// *::-webkit-scrollbar-thumb {
+//     background-color: $rgbWhite08;
+//     border-radius: 20px;
+//     border: 1px solid $rgbBackground;
+// }
 
 #loading-screen {
     position: absolute;
@@ -737,35 +737,47 @@ body {
     padding-left: calc(112px + 5rem);
     margin-left: $leftDistance;
 
-    &::before {
-        background-image: url('../images-icons/SVG/prostokat.svg');
-        position: absolute;
-        content: '';
-        pointer-events: none;
-        left: -1px;
-        top: -53vh;
-        width: calc(100% + 2px);
-        height: 100%;
-        z-index: 0;
-        background-size: contain;
-        transform: scaleY(0.5);
-        background-repeat: no-repeat;
+    &__top-degree,
+    &__bottom-degree {
+        width: 100%;
+        margin-left: calc(-112px - 5rem);
+        margin-top: -100px;
     }
 
-    &::after {
-        background-image: url('../images-icons/SVG/prostokat.svg');
-        position: absolute;
-        content: '';
-        pointer-events: none;
-        left: -1px;
-        bottom: -53vh;
-        width: calc(100% + 2px);
-        height: 100%;
-        z-index: 0;
-        background-size: contain;
-        transform: scaleY(-0.5);
-        background-repeat: no-repeat;
+    &__bottom-degree {
+        margin-top: 0;
+        margin-bottom: -100px;
     }
+
+    // &::before {
+    //     background-image: url('../images-icons/SVG/prostokat.svg');
+    //     position: absolute;
+    //     content: '';
+    //     pointer-events: none;
+    //     left: -1px;
+    //     top: -53vh;
+    //     width: calc(100% + 2px);
+    //     height: 100%;
+    //     z-index: 0;
+    //     background-size: contain;
+    //     transform: scaleY(0.5);
+    //     background-repeat: no-repeat;
+    // }
+
+    // &::after {
+    //     background-image: url('../images-icons/SVG/prostokat.svg');
+    //     position: absolute;
+    //     content: '';
+    //     pointer-events: none;
+    //     left: -1px;
+    //     bottom: -53vh;
+    //     width: calc(100% + 2px);
+    //     height: 100%;
+    //     z-index: 0;
+    //     background-size: contain;
+    //     transform: scaleY(-0.5);
+    //     background-repeat: no-repeat;
+    // }
 
     &__bottom-rectangle {
         position: absolute;
