@@ -319,7 +319,7 @@ body {
 .main-container {
   margin-top: 100vh;
   margin-left: calc(112px + 5rem);
-  width: 100%;
+  width: calc(100% - 112px - 5rem);
   position: relative;
   z-index: 1;
 }
