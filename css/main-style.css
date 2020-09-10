@@ -449,10 +449,6 @@ body {
   z-index: 3;
 }
 
-.projects__item:hover .projects__time {
-  text-decoration: none;
-}
-
 .projects__item:hover .projects__description {
   opacity: 1;
   bottom: 100px;
@@ -466,17 +462,6 @@ body {
 
 .projects__item:hover .projects__title::after {
   opacity: 0.8;
-}
-
-.projects__time {
-  font-family: Gilroy, Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: .7142857143rem;
-  letter-spacing: .36em;
-  line-height: 1;
-  text-transform: uppercase;
-  font-weight: 300;
 }
 
 .projects__description {
