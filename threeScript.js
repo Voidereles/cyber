@@ -389,15 +389,16 @@ function init() {
     $(".projects__title").hover(
         function () {
             colorTheme = this.getAttribute("data-color");
-            // console.log(colorTheme);
-            // let colorTheme = '0x00ff00';
             colorChange(colorTheme);
         }
     );
     $(".projects__title").mouseleave(
         function () {
-            // console.log(colorTheme);
-            // let colorTheme = '0x00ff00';
+            colorChange('#111111');
+        }
+    );
+    $(".projects__title").scroll(
+        function () {
             colorChange('#111111');
         }
     );
