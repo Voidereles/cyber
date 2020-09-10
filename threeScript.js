@@ -174,10 +174,10 @@ function init() {
     mesh.receiveShadow = true;
     scene.add(mesh);
 
-    var grid = new THREE.GridHelper(2000, 44, 0x000000, 0x000000);
-    grid.material.opacity = 0.15;
-    grid.material.transparent = true;
-    scene.add(grid);
+    // var grid = new THREE.GridHelper(2000, 44, 0x000000, 0x000000);
+    // grid.material.opacity = 0.15;
+    // grid.material.transparent = true;
+    // scene.add(grid);
 
     // model
     var loader = new FBXLoader(loadingManager);
