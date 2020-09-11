@@ -135,6 +135,9 @@ function init() {
     document.body.appendChild(container);
 
     camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 2000);
+    if (window.innerWidth <= 768) {
+        camera.fov = 60;
+    }
     camera.position.set(-49, 720, 300);
 
     scene = new THREE.Scene();
@@ -437,8 +440,11 @@ function animate() {
 
     update();
     // targetCamera.x += (-mouseXpercent * 15 - targetCamera.x) / 10;
-    targetCamera.z += (-mouseYpercent * 15 - targetCamera.z) / 10;
-    targetCamera.y += (-mouseXpercent * 55 - targetCamera.y) / 10;
+    if (window.innerWidth > 768) {
+        targetCamera.z += (-mouseYpercent * 15 - targetCamera.z) / 10;
+        targetCamera.y += (-mouseXpercent * 55 - targetCamera.y) / 10;
+        camera.lookAt(targetCamera);
+    }
     // targetCamera.rotation += (-mouseXpercent * 55) / 10;
     // mesh.rotation.y += (-mouseYpercent * 0.13 - mesh.rotation.y);
 
@@ -446,7 +452,6 @@ function animate() {
     // mesh.translateZ(0
     // targetCamera.y += (-(mouseYpercent * 15) + 1 - targetCamera.y) / 15;
 
-    camera.lookAt(targetCamera);
     // camera.lookAt(mesh.position);
     requestAnimationFrame(animate, renderer.domElement);
 

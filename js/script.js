@@ -78,32 +78,10 @@ $('.news__carousel').owlCarousel({
 
 $(document).ready(function () {
 
+    $('.nav-toggle').click(function () {
+        $('.header__nav').toggleClass('header__nav--entered');
+        $('.nav-toggle').toggleClass('nav-toggle--entered');
+    })
 
 
-    // let mapDiv = document.getElementById("map");
-    // let contactForm = document.getElementById("contactForm")
-
-    // // This handler will be executed only once when the cursor
-    // // moves over the unordered list
-    // mapDiv.addEventListener("mouseenter", function () {
-    //     // highlight the mouseenter target
-    //     contactForm.style.opacity = 0;
-
-    // });
-
-    // mapDiv.addEventListener("mouseout", function () {
-    //     // highlight the mouseenter target
-    //     contactForm.style.opacity = 1;
-
-    // });
-
-    // $(function () {
-    //     $('.map').hover(function () {
-    //         $('.contact__form-container').fadeTo(400, .05);
-    //         console.log('hover map')
-    //     }, function () {
-    //         $('.contact__form-container').fadeTo(400, 1);
-    //         console.log('unhover map')
-    //     });
-    // });
 })
