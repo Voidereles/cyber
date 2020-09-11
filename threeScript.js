@@ -141,7 +141,7 @@ function init() {
     camera.position.set(-49, 720, 300);
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x111111);
+    scene.background = new THREE.Color(0x111319);
     // scene.background.color = 0xccaacc;
 
 

@@ -13,6 +13,16 @@ body {
   position: relative;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: bold !important;
+}
+
 #loading-screen {
   position: absolute;
   z-index: 9999;
@@ -882,7 +892,7 @@ body {
   font-size: 0.8rem;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   opacity: 0.6;
 }
