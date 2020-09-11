@@ -145,17 +145,17 @@ function init() {
     // scene.background.color = 0xccaacc;
 
 
-    scene.fog = new THREE.Fog(0x111111, 300, 900);
+    scene.fog = new THREE.Fog(0x111319, 300, 900);
     //responsywnosc z fog
 
     lightA = new THREE.AmbientLight(0xfffffe, 0.1);
     scene.add(lightA);
 
-    lightH = new THREE.HemisphereLight(0xffffff, 0x444444);
+    lightH = new THREE.HemisphereLight(0xffffff, 0x111319);
     lightH.position.set(0, 200, 0);
     scene.add(lightH);
 
-    lightD = new THREE.DirectionalLight(0x111111, 3);
+    lightD = new THREE.DirectionalLight(0x111319, 3);
     lightD.position.set(220, 150, -250);
     lightD.castShadow = true;
     lightD.shadow.mapSize.width = 4096;
@@ -170,7 +170,7 @@ function init() {
 
     // ground
     var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(2000, 2000), new THREE.MeshPhongMaterial({
-        color: 0x333333,
+        color: 0x111319,
         depthWrite: true
     }));
     //pi = 180 stopni
@@ -399,12 +399,12 @@ function init() {
     );
     $(".projects__title").mouseleave(
         function () {
-            colorChange('#111111');
+            colorChange('#111319');
         }
     );
     $(".projects__title").scroll(
         function () {
-            colorChange('#111111');
+            colorChange('#111319');
         }
     );
 

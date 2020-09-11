@@ -152,7 +152,7 @@ h6 {
   position: fixed;
   top: 48px;
   left: 48px;
-  bottom: initial;
+  bottom: 48px;
   z-index: 1024;
 }
 
@@ -1092,6 +1092,7 @@ h6 {
 
 @media (max-width: 768px) {
   .header {
+    bottom: initial;
     top: 48px;
     left: 32px;
   }

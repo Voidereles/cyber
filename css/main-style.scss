@@ -243,7 +243,7 @@ h6 {
     position: fixed;
     top: $space2XL;
     left: $space2XL;
-    bottom: initial;
+    bottom: $space2XL;
     z-index: 1024;
 
     &__logo {
@@ -928,6 +928,7 @@ h6 {
         bottom: -1rem;
         width: calc(100% - 3.5rem);
         background: $rgbDark;
+
         height: 42px;
         padding-top: 0.5rem;
         transition: 0.2s;
@@ -1121,6 +1122,7 @@ h6 {
 
 @media (max-width: 768px) {
     .header {
+        bottom: initial;
 
         top: $space2XL;
         left: $spaceXL;
