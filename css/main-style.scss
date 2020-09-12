@@ -3,6 +3,7 @@ $rgbBackground05: rgba(17, 17, 17, 0.5);
 $rgbDark: rgb(49, 49, 49);
 $rgbDarkBlue: rgb(16, 42, 67);
 $rgbCadetBlue: rgb(169, 175, 195);
+$rgbRoseMadder: rgb(221, 66, 66);
 $rgbWhite08: rgba(255, 255, 255, 0.8);
 $bezierFastoutSlowin: cubic-bezier(0.4, 0.0, 0.2, 1);
 $durationXS: 200ms;
@@ -348,27 +349,27 @@ h6 {
         &:active,
         &:focus,
         &:hover {
-            color: white;
+            color: $rgbRoseMadder;
             text-decoration: none;
         }
 
-        &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: $spaceS;
-            left: $spaceS;
-            height: 4px;
-            background: $rgbDarkest;
-            transform: scaleX(0) translateY(-2px);
-            transition: transform $durationM $bezierFastoutSlowin;
-            transform-origin: right;
-        }
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     top: 50%;
+        //     right: $spaceS;
+        //     left: $spaceS;
+        //     height: 4px;
+        //     background: $rgbDarkest;
+        //     transform: scaleX(0) translateY(-2px);
+        //     transition: transform $durationM $bezierFastoutSlowin;
+        //     transform-origin: right;
+        // }
 
-        &:hover::after {
-            transform: scaleX(1) translateY(-2px);
-            transform-origin: left;
-        }
+        // &:hover::after {
+        //     transform: scaleX(1) translateY(-2px);
+        //     transform-origin: left;
+        // }
     }
 
     &__nav-icons {
@@ -388,12 +389,12 @@ h6 {
         padding: $spaceS;
         width: $space2XL;
         height: $space2XL;
-        color: $rgbWhite08;
+        color: $rgbRoseMadder;
         transition: color $durationM $bezierFastoutSlowin;
 
         &:hover {
             svg {
-                fill: $rgbDarkest;
+                fill: $rgbRoseMadder;
             }
         }
 
