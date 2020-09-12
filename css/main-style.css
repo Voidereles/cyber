@@ -922,6 +922,10 @@ h6 {
   position: relative;
 }
 
+.contact .row {
+  z-index: 1;
+}
+
 .contact__bottom-degree {
   width: calc(100% + 288px);
   position: absolute;

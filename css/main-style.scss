@@ -946,6 +946,10 @@ h6 {
     min-height: 50vh;
     position: relative;
 
+    .row {
+        z-index: 1;
+    }
+
     &__bottom-degree {
 
         //144px is the value of leftMenuWidth but for some reason it doesn't work in calc's
