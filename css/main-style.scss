@@ -546,15 +546,46 @@ h6 {
 .about {
     width: 100%;
 
+    // &__heading {
+    //     display: block;
+    //     position: relative;
+    //     font-size: $fontSizeH2;
+    //     line-height: $lineHeightBody;
+    //     color: white;
+    //     font-weight: $fontWeightMedium;
+    //     margin: $space3XL 0 $spaceL 0;
+
+    // }
+
     &__heading {
-        display: block;
+        font-size: 12px;
+        letter-spacing: 4px;
+        font-weight: 300;
+        color: rgba(187, 194, 229, .3);
+        text-transform: uppercase;
+        padding-bottom: 4rem;
         position: relative;
+        font-weight: 400;
+        font-family: 'Muli', sans-serif;
+
+        &::before {
+            content: '';
+            height: 2px;
+            width: 50px;
+            background-color: rgba(187, 194, 229, 0.3);
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 1rem;
+
+        }
+    }
+
+    &__subheading {
         font-size: $fontSizeH2;
         line-height: $lineHeightBody;
         color: white;
         font-weight: $fontWeightMedium;
         margin: $space3XL 0 $spaceL 0;
-
     }
 
     &__text {
@@ -567,8 +598,43 @@ h6 {
         text-rendering: optimizelegibility !important;
         letter-spacing: .03rem;
         font-weight: 300;
-        min-height: 80vh;
+        // min-height: 80vh;
         color: $rgbCadetBlue;
+    }
+
+    &__read-more {
+        color: $rgbRoseMadder;
+        transition: $bezierFastoutSlowin 0.3s;
+        display: inline-block;
+        // border-bottom: 1px solid $rgbRoseMadder;
+        // padding-bottom: 0.5rem;
+        position: relative;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: white;
+            // border-color: white;
+            text-decoration: none;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -0.25rem;
+            right: $spaceS;
+            left: $spaceS;
+            height: 2px;
+            background: $rgbRoseMadder;
+            transform: scaleX(0) translateY(-2px);
+            transition: transform $durationM $bezierFastoutSlowin;
+            transform-origin: right;
+        }
+
+        &:hover::after {
+            transform: scaleX(1) translateY(-2px);
+            transform-origin: left;
+        }
     }
 
     .owl-stage {
