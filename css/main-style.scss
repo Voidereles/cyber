@@ -946,21 +946,15 @@ h6 {
     min-height: 50vh;
     position: relative;
 
-    &::before {
-        background-color: rgba(32, 32, 32, 1);
+    &__bottom-degree {
+
+        //144px is the value of leftMenuWidth but for some reason it doesn't work in calc's
+        width: calc(100% + 288px);
         position: absolute;
-        content: '';
-        pointer-events: none;
-        left: -25%;
-        top: -40%;
-        width: 150%;
-        height: 85%;
-        -moz-transform: rotate(-3deg);
-        -o-transform: rotate(-3deg);
-        -ms-transform: rotate(-3deg);
-        -webkit-transform: rotate(-3deg);
-        transform: rotate(7deg);
+        top: 140px;
         z-index: 0;
+        left: -144px;
+
     }
 
     &__form-container {

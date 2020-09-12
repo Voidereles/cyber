@@ -922,18 +922,12 @@ h6 {
   position: relative;
 }
 
-.contact::before {
-  background-color: #202020;
+.contact__bottom-degree {
+  width: calc(100% + 288px);
   position: absolute;
-  content: '';
-  pointer-events: none;
-  left: -25%;
-  top: -40%;
-  width: 150%;
-  height: 85%;
-  -webkit-transform: rotate(-3deg);
-  transform: rotate(7deg);
+  top: 140px;
   z-index: 0;
+  left: -144px;
 }
 
 .contact__form-container {
