@@ -580,8 +580,6 @@ h6 {
 
 .refer {
   position: relative;
-  border-top-left-radius: 10%;
-  border-top-right-radius: 10%;
   background: #191c26;
   margin-left: -144px;
   margin-right: -144px;
@@ -595,7 +593,7 @@ h6 {
   z-index: 1;
   overflow-y: hidden;
   margin: 0 144px;
-  width: calc(100% - 288px);
+  max-width: calc(100% - 288px);
 }
 
 .refer__heading {
@@ -646,6 +644,14 @@ h6 {
   -webkit-transition: 0.4s;
   transition: 0.4s;
   margin-bottom: 0.75rem;
+  width: initial !important;
+  -webkit-filter: contrast(0.5) grayscale(0.9);
+          filter: contrast(0.5) grayscale(0.9);
+}
+
+.refer__company-logo:hover {
+  -webkit-filter: none;
+          filter: none;
 }
 
 .refer__company-name {

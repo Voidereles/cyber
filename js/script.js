@@ -34,9 +34,7 @@ $('.refer__carousel').owlCarousel({
             nav: false,
         },
         1400: {
-            items: 5,
-            nav: true,
-            loop: false
+            items: 5
         }
     }
 });

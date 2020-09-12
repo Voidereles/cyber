@@ -671,8 +671,8 @@ h6 {
     // z-index: 3;
     // min-height: 50vh;
 
-    border-top-left-radius: 10%;
-    border-top-right-radius: 10%;
+    // border-top-left-radius: 10%;
+    // border-top-right-radius: 10%;
     background: $rgbRaisinBlack;
     margin-left: -144px;
     margin-right: -144px;
@@ -685,7 +685,7 @@ h6 {
         z-index: 1;
         overflow-y: hidden;
         margin: 0 144px;
-        width: calc(100% - 288px);
+        max-width: calc(100% - 288px);
     }
 
     &__heading {
@@ -757,6 +757,13 @@ h6 {
             max-height: 222px;
             transition: 0.4s;
             margin-bottom: 0.75rem;
+            width: initial !important;
+            filter: contrast(0.5) grayscale(0.9);
+
+            &:hover {
+                filter: none;
+            }
+
         }
 
         &-name {
