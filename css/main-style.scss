@@ -2,6 +2,7 @@ $rgbDarkest: rgb(17, 17, 17);
 $rgbBackground05: rgba(17, 17, 17, 0.5);
 $rgbDark: rgb(49, 49, 49);
 $rgbDarkBlue: rgb(16, 42, 67);
+$rgbCadetBlue: rgb(169, 175, 195);
 $rgbWhite08: rgba(255, 255, 255, 0.8);
 $bezierFastoutSlowin: cubic-bezier(0.4, 0.0, 0.2, 1);
 $durationXS: 200ms;
@@ -514,7 +515,7 @@ h6 {
         z-index: 1;
         text-align: right;
         opacity: 0;
-        font-family: Heebo, Helvetica, Arial, sans-serif;
+        font-family: Muli, Heebo, Helvetica, Arial, sans-serif;
         font-weight: 300;
         font-style: normal;
         color: #fff;
@@ -535,7 +536,7 @@ h6 {
         position: relative;
         font-size: $fontSizeH2;
         line-height: $lineHeightBody;
-        color: $rgbWhite08;
+        color: white;
         font-weight: $fontWeightMedium;
         margin: $space3XL 0 $spaceL 0;
 
@@ -552,6 +553,7 @@ h6 {
         letter-spacing: .03rem;
         font-weight: 300;
         min-height: 80vh;
+        color: $rgbCadetBlue;
     }
 
     .owl-stage {
@@ -608,7 +610,7 @@ h6 {
     &__subheading {
         font-size: $fontSizeH2;
         line-height: $lineHeightBody;
-        color: $rgbWhite08;
+        color: white;
         font-weight: $fontWeightMedium;
         margin: $space3XL 0 $spaceL 0;
         text-align: center;
@@ -1025,6 +1027,10 @@ h6 {
         margin-top: 5rem;
         margin-right: auto;
         max-width: 540px;
+    }
+
+    &__info-heading {
+        color: white;
     }
 
     &__link {

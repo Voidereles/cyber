@@ -452,7 +452,7 @@ h6 {
   z-index: 1;
   text-align: right;
   opacity: 0;
-  font-family: Heebo, Helvetica, Arial, sans-serif;
+  font-family: Muli, Heebo, Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
   color: #fff;
@@ -471,7 +471,7 @@ h6 {
   position: relative;
   font-size: 2.375rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
   font-weight: 500;
   margin: 64px 0 24px 0;
 }
@@ -487,6 +487,7 @@ h6 {
   letter-spacing: .03rem;
   font-weight: 300;
   min-height: 80vh;
+  color: #a9afc3;
 }
 
 .about .owl-stage {
@@ -561,7 +562,7 @@ h6 {
 .refer__subheading {
   font-size: 2.375rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
   font-weight: 500;
   margin: 64px 0 24px 0;
   text-align: center;
@@ -1001,6 +1002,10 @@ h6 {
   margin-top: 5rem;
   margin-right: auto;
   max-width: 540px;
+}
+
+.contact__info-heading {
+  color: white;
 }
 
 .contact__link {
