@@ -1265,5 +1265,10 @@ h6 {
     position: relative;
     z-index: 3;
   }
+  .footer__container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% -2rem);
+  }
 }
 /*# sourceMappingURL=main-style.css.map */
