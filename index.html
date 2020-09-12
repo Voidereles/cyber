@@ -24,8 +24,8 @@
 
 <body>
 
-	<header class="header">
-		<a class="header__logo" href="#" aria-label="PHL Group">
+	<header class="header navbar">
+		<a class="header__logo" aria-label="PHL Group">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.15 22.75">
 				<defs>
 					<style>
@@ -61,11 +61,32 @@
 			</span>
 		</button>
 		<nav class="header__nav">
+
+
+
 			<div class="header__nav-list">
-				<a class="header__nav-link" href="/#project-1">Lorem</a>
-				<a class="header__nav-link" href="/articles">Lorem</a>
-				<a class="header__nav-link" href="/#about">Lorem</a>
-				<a class="header__nav-link" href="/contact">Lorem</a>
+				<!-- <ul id="headerNavPills" class="nav nav-pills header__nav-pills flex-column flex-lg-row px-3 px-lg-0"> -->
+				<!-- <li class="nav-item">
+						<a class="header__nav-link" href="#projects">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="header__nav-link" href="#careers">Careers</a>
+					</li>
+					<li class="nav-item">
+						<a class="header__nav-link" href="#news">News</a>
+					</li>
+					<li class="nav-item">
+						<a class="header__nav-link" href="#contact">Contact</a>
+					</li> -->
+
+				<a class="header__nav-link" href="#projects">About</a>
+				<a class="header__nav-link" href="#careers">Careers</a>
+				<a class="header__nav-link" href="#news">News</a>
+				<a class="header__nav-link" href="#contact">Contact</a>
+				<!-- </ul> -->
+
+
+
 			</div>
 
 			<div class="header__nav-icons">
@@ -88,11 +109,35 @@
 		</nav>
 
 
+
+		<!-- <nav class="navbar navbar-toggleable-sm navbar-light bg-faded fixed-top" id="navigation">
+
+			<a class="navbar-brand" href="#">Navbar</a>
+
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+				data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="" id="navbarNav">
+				<ul class="navbar-nav nav-pills">
+					<a class="nav-link header__nav-link" href="#projects">About</a>
+					<a class="nav-link header__nav-link" href="#careers">Careers</a>
+					<a class="nav-link header__nav-link" href="#news">News</a>
+					<a class="nav-link header__nav-link" href="#contact">Contact</a>
+
+				</ul>
+			</div>
+-->
+
+
+		<!-- </nav>  -->
+
+
 	</header>
 
 	<main class="main-container">
 
-		<section class="projects">
+		<section id="projects" class="projects scrollspy">
 
 			<div class="container-fluid">
 				<a class="row">
@@ -338,7 +383,7 @@
 
 
 
-		<section class="jobs">
+		<section id="careers" class="jobs scrollspy">
 			<svg class="jobs__top-degree" width="167.62mm" height="61.032mm" preserveAspectRatio="none" version="1.1"
 				viewBox="0 0 167.62 61.032" xmlns="http://www.w3.org/2000/svg">
 				<defs>
@@ -496,13 +541,13 @@
 				viewBox="0 0 167.62 61.032" xmlns="http://www.w3.org/2000/svg">
 				<defs>
 					<clipPath id="clipPath834">
-						<rect x="10.379" y="-7.346" width="167.62" height="120.67" fill="#202020"
+						<rect x="10.379" y="-7.346" width="167.62" height="120.67" fill="#111319"
 							stroke-width=".55722" />
 					</clipPath>
 				</defs>
 				<g transform="translate(-10.379 -27.076)" clip-path="url(#clipPath834)">
 					<rect transform="rotate(7.007)" x="13.578" y="25.611" width="173.86" height="40.122" ry="0"
-						fill="#202020" stroke-width=".17693" />
+						fill="#111319" stroke-width=".17693" />
 				</g>
 			</svg>
 			<div class="jobs__bottom-rectangle"></div>
@@ -513,7 +558,7 @@
 
 
 
-		<section class="news wow fadeInRight">
+		<section id="news" class="news wow fadeInRight scrollspy">
 			<div class="owl-carousel news__carousel px-4">
 				<div class="news__item-container">
 					<div class="news__item">
@@ -531,7 +576,7 @@
 			</div>
 		</section>
 
-		<section class="contact">
+		<section id="contact" class="contact scrollspy">
 			<div class="row position-relative mt-5">
 				<div class="col-12 col-lg-6">
 					<div id="contactForm" class="contact__form-container mb-5">
@@ -578,7 +623,7 @@
 									xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd"
 										d="M8 16C8 16 14 10.3137 14 6C14 2.68629 11.3137 0 8 0C4.68629 0 2 2.68629 2 6C2 10.3137 8 16 8 16ZM8 9C9.65685 9 11 7.65685 11 6C11 4.34315 9.65685 3 8 3C6.34315 3 5 4.34315 5 6C5 7.65685 6.34315 9 8 9Z"
-										fill="#E26868" />
+										fill="#dd4242" />
 								</svg>
 							</div>
 							<div class="col-9 col-lg-11">
@@ -591,8 +636,8 @@
 							data-wow-delay="1s" data-wow-offset="-25">
 							<div class="col-3 col-lg-1">
 								<svg width="16" height="16" viewBox="0 0 16 16" class="bi bi-telephone-fill"
-									fill="#E26868" xmlns="http://www.w3.org/2000/svg">
-									<path fill="#E26868" fill-rule="evenodd"
+									fill="#dd4242" xmlns="http://www.w3.org/2000/svg">
+									<path fill="#dd4242" fill-rule="evenodd"
 										d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z" />
 								</svg>
 							</div>
@@ -608,12 +653,12 @@
 									xmlns="http://www.w3.org/2000/svg">
 									<path
 										d="M0.0495854 1.55544L8 6.41403L15.9504 1.55544C15.7483 0.664837 14.9518 0 14 0H2C1.04822 0 0.25173 0.664837 0.0495854 1.55544Z"
-										fill="#E26868" />
-									<path d="M16 2.69708L10.1248 6.28746L16 9.74344V2.69708Z" fill="#E26868" />
+										fill="#dd4242" />
+									<path d="M16 2.69708L10.1248 6.28746L16 9.74344V2.69708Z" fill="#dd4242" />
 									<path
 										d="M15.8316 10.8046L9.15749 6.87862L8 7.58597L6.84251 6.87862L0.168414 10.8046C0.478072 11.5085 1.18164 12 2 12H14C14.8184 12 15.5219 11.5085 15.8316 10.8046Z"
-										fill="#E26868" />
-									<path d="M0 9.74344L5.87516 6.28746L0 2.69708V9.74344Z" fill="#E26868" />
+										fill="#dd4242" />
+									<path d="M0 9.74344L5.87516 6.28746L0 2.69708V9.74344Z" fill="#dd4242" />
 								</svg>
 
 							</div>
@@ -632,13 +677,13 @@
 				version="1.1" viewBox="0 0 167.62 61.032" xmlns="http://www.w3.org/2000/svg">
 				<defs>
 					<clipPath id="clipPath834">
-						<rect x="10.379" y="-7.346" width="167.62" height="120.67" fill="#202020"
+						<rect x="10.379" y="-7.346" width="167.62" height="120.67" fill="#111319"
 							stroke-width=".55722" />
 					</clipPath>
 				</defs>
 				<g transform="translate(-10.379 -27.076)" clip-path="url(#clipPath834)">
 					<rect transform="rotate(7.007)" x="13.578" y="25.611" width="173.86" height="40.122" ry="0"
-						fill="#202020" stroke-width=".17693" />
+						fill="#111319" stroke-width=".17693" />
 				</g>
 			</svg>
 		</section>

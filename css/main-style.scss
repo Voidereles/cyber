@@ -1,10 +1,11 @@
 $rgbDarkest: rgb(17, 17, 17);
 $rgbBackground05: rgba(17, 17, 17, 0.5);
 $rgbDark: rgb(48, 48, 48);
-$rgbDarkBlue: rgb(16, 42, 66);
-$rgbRaisinBlack: rgb(24, 27, 37);
-$rgbCadetBlue: rgb(169, 175, 195);
-$rgbRoseMadder: rgb(221, 66, 66);
+$rgbBackgroundBlue: #111319;
+$rgbDarkBlue: #102a42;
+$rgbRaisinBlack: #181b25;
+$rgbCadetBlue: #a9afc3;
+$rgbRoseMadder: #dd4242;
 $rgbWhite08: rgba(255, 255, 255, 0.8);
 $bezierFastoutSlowin: cubic-bezier(0.4, 0.0, 0.2, 1);
 $durationXS: 200ms;
@@ -237,7 +238,54 @@ h6 {
 }
 
 
+
 .header {
+
+    // //reset styles
+    // .nav-pills .nav-link.active,
+    // .nav-pills .show>.nav-link,
+    // .navbar-light .navbar-nav .nav-link,
+    // .navbar-light .navbar-nav .nav-link:focus,
+    // .navbar-light .navbar-nav .nav-link:hover,
+    // .navbar-light .navbar-nav .active>.nav-link,
+    // .navbar-light .navbar-nav .nav-link.active,
+    // .navbar-light .navbar-nav .nav-link.show,
+    // .navbar-light .navbar-nav .show>.nav-link {
+    //     color: initial;
+    //     background: initial;
+    // }
+
+    // .nav-pills .nav-link.active,
+    // .nav-pills .show>.nav-link {
+    //     color: $rgbRoseMadder !important;
+    // }
+
+    // .nav-pills .nav-link {
+    //     padding: 16px;
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -270,12 +318,9 @@ h6 {
 
 
     .nav-toggle {
-        // $buttonSize: $space2XL);
         position: fixed;
         top: $space2XL;
         right: $spaceXL;
-        // width: $buttonSize;
-        // height: $buttonSize;
         z-index: 1024;
         display: none;
         background: none;
@@ -348,10 +393,13 @@ h6 {
         line-height: 1;
 
         &:active,
-        &:focus,
         &:hover {
             color: $rgbRoseMadder;
             text-decoration: none;
+        }
+
+        &.active {
+            color: $rgbRoseMadder;
         }
 
         // &::after {
@@ -801,8 +849,8 @@ h6 {
 
 .jobs {
     position: relative;
-    background: $rgbWhite08;
-    width: calc(100% + 144 * 2);
+    background: #D0D0D1;
+    width: calc(100% + 144px * 2);
     min-height: 60vh;
     padding-left: $leftMenuWidth;
     margin-left: $leftMenuWidthMinus;
@@ -826,7 +874,7 @@ h6 {
         bottom: -50%;
         height: 50%;
         width: calc(100% + 144px);
-        background-color: #202020;
+        background-color: $rgbBackgroundBlue;
         left: $leftMenuWidthMinus;
     }
 
@@ -882,7 +930,8 @@ h6 {
         padding: 40px;
         background-color: #fff;
         border: 1px solid #f0f0f0;
-        border-radius: 6px;
+        // border-radius: 6px;
+        border-radius: 0;
         transition: all .5s ease;
         overflow: hidden;
         z-index: 3000;
@@ -904,26 +953,7 @@ h6 {
             transform: scale(1.08);
             box-shadow: 0 36px 64px 0 rgba(0, 0, 0, .1);
 
-            .jobs__check {
-                width: 200px;
-                border-radius: 100px;
-                background-color: $rgbDarkBlue;
 
-                &-text {
-                    left: 16px;
-                    opacity: 1;
-                    color: $rgbWhite08;
-                }
-
-                svg {
-                    left: initial;
-                    right: 16px;
-
-                    path {
-                        fill: $rgbWhite08;
-                    }
-                }
-            }
         }
     }
 
@@ -948,6 +978,8 @@ h6 {
         color: black;
     }
 
+
+
     &__check {
         border-radius: 50%;
         border: 1px solid $rgbDarkBlue;
@@ -962,6 +994,12 @@ h6 {
         overflow: hidden;
         margin-top: 2rem;
 
+
+        width: 200px;
+        border-radius: 100px;
+        background-color: $rgbDarkBlue;
+
+
         &-text {
             position: absolute;
             left: -120px;
@@ -970,6 +1008,11 @@ h6 {
             transition: 0.5s ease;
             opacity: 0;
             color: $rgbDarkBlue;
+
+            left: 16px;
+            opacity: 1;
+            color: $rgbWhite08;
+
         }
 
 
@@ -985,34 +1028,44 @@ h6 {
                 fill: $rgbDarkBlue;
             }
         }
+
+        svg {
+            left: initial;
+            right: 16px;
+            display: none;
+
+            path {
+                fill: $rgbWhite08;
+            }
+        }
     }
 
 }
 
 .news {
-    background-color: white;
+    // background-color: white;
+    background-color: $rgbRaisinBlack;
     margin-top: 20vh;
     position: relative;
     z-index: 2;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    // border-top-left-radius: 0.5rem;
+    // border-bottom-left-radius: 0.5rem;
     color: $rgbDarkBlue;
     margin-right: $leftMenuWidthMinus;
-    // width: calc(100% + 144px);
-    // max-width: 1700px;
+    color: white;
 
 
     &__item-container {
-        box-shadow: 0px 1px 4px 0px rgba(27, 27, 27, 0.2);
+        // box-shadow: 0px 1px 4px 0px rgba(27, 27, 27, 0.2);
         padding: 1.5rem 1.7rem 3rem 1.7rem;
-        border-radius: 0.5rem;
+        // border-radius: 0.5rem;
         margin: 2rem 0 3rem 0;
         position: relative;
     }
 
     &__item {
         overflow: hidden;
-        height: 180px;
+        height: 200px;
     }
 
     &__data {
@@ -1022,13 +1075,17 @@ h6 {
 
     &__heading {
         font-size: $fontSizeBodyM;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
     }
 
     &__text {
         font-size: $fontSizeBodyXS;
         overflow: hidden;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         opacity: 0.6;
     }
@@ -1037,16 +1094,36 @@ h6 {
         position: absolute;
         bottom: -1rem;
         width: calc(100% - 3.5rem);
-        background: $rgbDark;
+        // background: $rgbDark;
+        border-color: transparent;
 
+        // background-color: white;
+        background-color: $rgbRoseMadder;
+        // color: $rgbBackgroundBlue;
+        color: white;
         height: 42px;
         padding-top: 0.5rem;
         transition: 0.2s;
         left: 50%;
         transform: translateX(-50%);
 
-        &:hover {
+        &:hover,
+        &:focus {
             transform: translateX(-50%) translateY(-4px);
+            border-color: transparent;
+            background-color: darken($color: $rgbRoseMadder, $amount: 5%);
+            outline: none;
+            box-shadow: none;
+        }
+
+        &:focus {
+            transform: translateX(-50%);
+        }
+
+        &:active {
+            transform: translateX(-50%) translateY(-4px) scale(0.92);
+            border-color: transparent;
+            background-color: darken($color: $rgbRoseMadder, $amount: 5%);
         }
     }
 }
@@ -1065,7 +1142,9 @@ h6 {
         //144px is the value of leftMenuWidth but for some reason it doesn't work in calc's
         width: calc(100% + 288px);
         position: absolute;
-        top: 140px;
+        top: -20%;
+        height: 100%;
+        max-height: 600px;
         z-index: 0;
         left: -144px;
 
@@ -1101,7 +1180,7 @@ h6 {
 
     &__label-star {
         padding-left: 5px;
-        color: rgb(151, 21, 21);
+        color: $rgbRoseMadder;
     }
 
 
@@ -1142,10 +1221,10 @@ h6 {
 
     &__link {
         color: white;
-        transition: 0.3s;
+        transition: 0.3s ease;
 
         svg path {
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
 
         &:hover,
@@ -1163,6 +1242,7 @@ h6 {
 
 .map {
     background-image: url('../images-icons/map.PNG');
+    // background-image: url('../images-icons/map-2.PNG');
     background-size: cover;
     background-repeat: no-repeat;
     height: 90vh;
@@ -1314,5 +1394,47 @@ h6 {
 
     .projects {
         padding-top: 5vh;
+
+        &__item {
+
+            height: 110px;
+        }
+
+        &__title {
+            font-size: 3rem;
+            line-height: 4rem;
+            height: 40px;
+        }
     }
+
+    .jobs {
+        margin: initial;
+        width: 100%;
+        padding: initial;
+    }
+
+    .news {
+        margin-right: 0;
+    }
+
+    .contact {
+        &__info {
+            min-height: 300px;
+            background: $rgbBackgroundBlue;
+        }
+    }
+
+    .map {
+        margin-top: 50vh;
+        height: 300px;
+        background-size: contain;
+        position: relative;
+        z-index: 3;
+    }
+
+    .footer__container {
+        margin-left: 1rem margin-right: 1rem;
+        width: calc(100% -2rem);
+    }
+}
 }
