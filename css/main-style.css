@@ -20,7 +20,7 @@ h4,
 h5,
 h6 {
   font-family: 'Poppins', sans-serif !important;
-  font-weight: bold !important;
+  font-weight: bold;
 }
 
 #loading-screen {
@@ -374,6 +374,19 @@ h6 {
   color: rgba(187, 194, 229, 0.3);
   text-transform: uppercase;
   padding-bottom: 4rem;
+  position: relative;
+  font-weight: 400;
+  font-family: 'Muli', sans-serif;
+}
+
+.projects__heading::before {
+  content: '';
+  height: 2px;
+  width: 50px;
+  background-color: rgba(187, 194, 229, 0.3);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1rem;
 }
 
 .projects__title:before {
