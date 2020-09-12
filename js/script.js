@@ -14,7 +14,7 @@ $('.refer__carousel').owlCarousel({
     loop: true,
     dots: true,
     lazyLoad: true,
-    margin: 15,
+    margin: 35,
     responsiveClass: true,
     autoplay: true,
     autoplayHoverPause: true,
@@ -25,12 +25,12 @@ $('.refer__carousel').owlCarousel({
         },
         600: {
             items: 3,
-            margin: 20,
+            margin: 28,
             nav: false
         },
         1000: {
             items: 4,
-            margin: 20,
+            margin: 48,
             nav: false,
         },
         1400: {
