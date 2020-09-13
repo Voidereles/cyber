@@ -714,6 +714,15 @@ h6 {
   margin: 0 0.5rem;
 }
 
+.refer .owl-dot:focus {
+  outline-color: transparent !important;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -webkit-focus-ring-color: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 .refer .owl-dot.active {
   background-color: #dd4242 !important;
 }
@@ -953,6 +962,20 @@ h6 {
 .news .owl-carousel .owl-nav button.owl-prev:hover,
 .news .owl-carousel button.owl-dot:hover {
   opacity: 1;
+}
+
+.news .owl-carousel .owl-nav button.owl-next:focus,
+.news .owl-carousel .owl-nav button.owl-prev:focus,
+.news .owl-carousel button.owl-dot:focus {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline-color: transparent !important;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -webkit-focus-ring-color: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .news .owl-carousel .owl-nav button.owl-prev {
