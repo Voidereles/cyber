@@ -45,29 +45,26 @@ $('.refer__carousel').owlCarousel({
 
 $('.news__carousel').owlCarousel({
     loop: true,
-    dots: true,
+    dots: false,
     lazyLoad: true,
     margin: 25,
     responsiveClass: true,
+    nav: true,
     autoplay: true,
     autoplayHoverPause: true,
     responsive: {
         0: {
             items: 1,
-            margin: 15,
-            nav: true
+            margin: 15
         },
         600: {
-            items: 2,
-            nav: false
+            items: 2
         },
         1000: {
-            items: 4,
-            nav: false,
+            items: 4
         },
         1900: {
-            items: 5,
-            nav: true,
+            items: 5
         }
     }
 });
