@@ -26,6 +26,8 @@ let mouseY = 0;
 let mouseXpercent = 0;
 let mouseYpercent = 0;
 
+let onMouseMoveLogoRotation = true;
+
 let getColorHex;
 
 var clock = new THREE.Clock();
@@ -282,6 +284,24 @@ function init() {
         }
     }
 
+    function toggleMouseMove() {
+        if (onMouseMoveLogoRotation == true) {
+            onMouseMoveLogoRotation = false;
+        } else {
+            onMouseMoveLogoRotation = true;
+        }
+    }
+
+    const buttonToggleMouseMove = {
+        add: function () {
+            toggleMouseMove();
+        }
+    }
+
+
+
+
+
     var gui = new GUI();
 
     var data = {
@@ -352,6 +372,8 @@ function init() {
 
     gui.add(buttonDecreaseLogo, "add").name('smaller logo gsap animation');
     gui.add(buttonIncreaseLogo, "add").name('bigger logo gsap animation');
+
+    gui.add(buttonToggleMouseMove, "add").name('tgl rot&contr');
 
     // gui.addColor(data, 'color').onChange(() => {
     //     scene.background.color.setHex(Number(data.color.toString().replace('#', '0x')));
@@ -427,7 +449,6 @@ function onWindowResize() {
 
 }
 
-
 function update() {
     // uncommenting will enable camera move on mouse move but disable controls target gui
     controls.update();
@@ -444,6 +465,10 @@ function animate() {
         targetCamera.z += (-mouseYpercent * 15 - targetCamera.z) / 10;
         targetCamera.y += (-mouseXpercent * 55 - targetCamera.y) / 10;
         camera.lookAt(targetCamera);
+    }
+
+    if (onMouseMoveLogoRotation == false) {
+        controls.update();
     }
     // targetCamera.rotation += (-mouseXpercent * 55) / 10;
     // mesh.rotation.y += (-mouseYpercent * 0.13 - mesh.rotation.y);

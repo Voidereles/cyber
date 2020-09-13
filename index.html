@@ -549,40 +549,46 @@
 						</div>
 						<form action="" class="contact__form">
 							<fieldset class="contact__fieldset wow fadeInUp">
-								<label for="name" class="contact__label">Imię i nazwisko / Nazwa firmy <span
-										class="contact__label-star">*</span></label>
-								<input type="text" id="name" class="contact__input" required>
+								<!-- <label for="name" class="contact__label">Imię i nazwisko / Nazwa firmy <span
+										class="contact__label-star">*</span></label> -->
+								<input type="text" id="name" class="contact__input" aria-label="name"
+									placeholder="Name*" required>
 							</fieldset>
 
 							<fieldset class="contact__fieldset wow fadeInUp" data-wow-delay="0.3s">
-								<label for="phoneNumber" class="contact__label">Telefon</label>
-								<input type="tel" id="phoneNumber" class="contact__input">
+								<!-- <label for="phoneNumber" class="contact__label">Telefon</label> -->
+								<input type="tel" id="phoneNumber" class="contact__input" aria-label="Telephone number"
+									placeholder="Tel. number">
 							</fieldset>
 
 							<fieldset class="contact__fieldset wow fadeInUp" data-wow-delay="0.6s">
-								<label for="name" class="contact__label">E-mail <span
-										class="contact__label-star">*</span></label>
-								<input type="mail" id="e-mail" class="contact__input" required>
+								<!-- <label for="name" class="contact__label">E-mail <span
+										class="contact__label-star">*</span></label> -->
+								<input type="mail" id="email" class="contact__input" aria-label="e-mail"
+									placeholder="E-mail*" required>
 							</fieldset>
 
 							<fieldset class="contact__fieldset wow fadeInUp" data-wow-delay="0.9s"
 								data-wow-offset="-30">
-								<label for="contactMessage" class="contact__label">Twoja wiadomość <span
-										class="contact__label-star">*</span></label>
+								<!-- <label for="contactMessage" class="contact__label">Twoja wiadomość <span
+										class="contact__label-star">*</span></label> -->
 								<textarea name="contactMessageName" id="contactMessage" cols="30" rows="10"
-									class="contact__textarea" placeholder="Dzień dobry..."></textarea>
+									class="contact__textarea" aria-label="message" placeholder="Message"></textarea>
 							</fieldset>
 
-							<button type="submit" name="" id=""
-								class="btn btn-lg btn-block contact__form-btn wow fadeInUp" data-wow-offset="-70"
-								data-wow-delay="1.2s">Wyślij
-								wiadomość</button>
+							<button type="submit" name="" id="" class="btn contact__form-btn wow fadeInUp"
+								data-wow-offset="-70" data-wow-delay="1.2s">Send Message</button>
 						</form>
 					</div>
 				</div>
 				<div class="col-12 col-lg-6">
 					<div class="contact__info wow fadeInRight" data-wow-delay="0.5s">
-						<h3 class="contact__info-heading text-center">Contact information</h3>
+						<div class="px-4">
+
+							<h3 class="contact__info-heading">Contact information</h3>
+						</div>
+
+
 						<a href="https://www.google.pl/maps" class="row contact__link px-2 px-lg-4 my-4 wow fadeInRight"
 							data-wow-delay="0.5s">
 							<div class="col-3 col-lg-1">

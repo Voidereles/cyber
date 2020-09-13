@@ -920,6 +920,20 @@ h6 {
   position: relative;
 }
 
+.news__item-container::after {
+  content: '';
+  background-color: #222634;
+  height: 90%;
+  right: -13px;
+  width: 2px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 .news__item {
   overflow: hidden;
   height: 200px;
@@ -948,46 +962,45 @@ h6 {
 }
 
 .news__btn {
-  position: absolute;
-  bottom: -1rem;
-  width: calc(100% - 3.5rem);
-  border-color: transparent;
-  background: transparent;
   color: #dd4242;
-  height: 42px;
-  padding-top: 0.5rem;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 
-.news__btn:hover, .news__btn:focus {
-  -webkit-transform: translateX(-50%) translateY(-4px);
-          transform: translateX(-50%) translateY(-4px);
-  border-color: transparent;
-  background-color: #d92c2c;
-  outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+.news__btn:hover, .news__btn:focus, .news__btn:active {
+  color: white;
   text-decoration: none;
-  color: white;
 }
 
-.news__btn:focus {
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  background: transparent;
-  color: white;
+.news__btn::after {
+  content: "";
+  position: absolute;
+  bottom: -0.25rem;
+  right: 8px;
+  left: 8px;
+  height: 2px;
+  background: #dd4242;
+  -webkit-transform: scaleX(0) translateY(-2px);
+          transform: scaleX(0) translateY(-2px);
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transform-origin: right;
+          transform-origin: right;
 }
 
-.news__btn:active {
-  -webkit-transform: translateX(-50%) translateY(-4px) scale(0.92);
-          transform: translateX(-50%) translateY(-4px) scale(0.92);
-  border-color: transparent;
-  background-color: #d92c2c;
-  color: white;
+.news__btn:hover::after {
+  -webkit-transform: scaleX(1) translateY(-2px);
+          transform: scaleX(1) translateY(-2px);
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 .contact {
@@ -1034,40 +1047,31 @@ h6 {
           flex-direction: column;
 }
 
-.contact__label {
-  font-weight: 700;
-  color: white;
-  line-height: 35px;
-  line-height: 2.5rem;
-  font-size: 0.7rem;
-  margin-bottom: 0;
-  text-transform: uppercase;
-}
-
-.contact__label-star {
-  padding-left: 5px;
-  color: #dd4242;
-}
-
 .contact__input, .contact__textarea {
-  border: 1px solid #E7E7E7;
-  color: #303030;
-  border-radius: 2px;
   width: 100%;
   line-height: 16px;
-  padding: 0.5rem;
+  padding: 0.75rem 0 0.5rem 0;
   display: block;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #102a42;
+  margin-bottom: 1rem;
 }
 
 .contact__input:focus, .contact__textarea:focus {
-  border: 1px solid #102a42;
+  border-bottom: 1px solid #dd4242;
   outline: none;
+  background-color: #1a1d28;
 }
 
 .contact__form-btn {
-  width: calc(100% - 30px);
   margin: .35em .75em .625em;
-  background-color: #dd4242;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  border: 1px solid #dd4242;
+  border-radius: 100px;
   color: white;
   -webkit-transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1076,11 +1080,14 @@ h6 {
 .contact__form-btn:hover, .contact__form-btn:active {
   background-color: #c82424;
   color: white;
+  border: 1px solid #dd4242;
 }
 
 .contact__form-btn:active {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .contact__info {
@@ -1091,7 +1098,26 @@ h6 {
 }
 
 .contact__info-heading {
-  color: white;
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 300;
+  color: rgba(187, 194, 229, 0.3);
+  text-transform: uppercase;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+  font-weight: 400;
+  font-family: 'Muli', sans-serif;
+}
+
+.contact__info-heading::before {
+  content: '';
+  height: 2px;
+  width: 50px;
+  background-color: rgba(187, 194, 229, 0.3);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1rem;
 }
 
 .contact__link {
