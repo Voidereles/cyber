@@ -303,10 +303,20 @@ h6 {
         position: relative;
         padding: $spaceS;
         z-index: 16;
-        transition: 0.3s;
+        transition: 0.5s $bezierFastoutSlowin;
+        cursor: pointer;
 
         &:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
+
+
+            svg path {
+                fill: $rgbRoseMadder;
+            }
+        }
+
+        &:active {
+            transform: scale(0.9);
         }
 
         svg {
@@ -852,7 +862,6 @@ h6 {
     background: #D0D0D1;
     width: calc(100% + 144px * 2);
     min-height: 60vh;
-    padding-left: $leftMenuWidth;
     margin-left: $leftMenuWidthMinus;
     margin-right: $leftMenuWidthMinus;
 
@@ -953,8 +962,17 @@ h6 {
             transform: scale(1.08);
             box-shadow: 0 36px 64px 0 rgba(0, 0, 0, .1);
 
+            .jobs__check {
+                background-color: $rgbDarkBlue;
+
+                &-text {
+                    color: white;
+                }
+            }
 
         }
+
+
     }
 
     &__job-title {
@@ -993,51 +1011,30 @@ h6 {
         transition: 0.5s ease;
         overflow: hidden;
         margin-top: 2rem;
-
-
-        width: 200px;
+        width: 172px;
         border-radius: 100px;
-        background-color: $rgbDarkBlue;
+        background-color: white;
 
 
         &-text {
             position: absolute;
             left: -120px;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-45%);
             transition: 0.5s ease;
             opacity: 0;
             color: $rgbDarkBlue;
-
-            left: 16px;
+            width: 100%;
+            left: 0;
+            text-align: center;
             opacity: 1;
-            color: $rgbWhite08;
 
         }
 
 
-        svg {
-            position: absolute;
-            top: 50%;
-            right: 50%;
-            transform: translate(50%, -50%);
-            transition: right 0s;
 
-            path {
-                transition: 0.5s ease;
-                fill: $rgbDarkBlue;
-            }
-        }
 
-        svg {
-            left: initial;
-            right: 16px;
-            display: none;
 
-            path {
-                fill: $rgbWhite08;
-            }
-        }
     }
 
 }
@@ -1096,11 +1093,12 @@ h6 {
         width: calc(100% - 3.5rem);
         // background: $rgbDark;
         border-color: transparent;
-
         // background-color: white;
-        background-color: $rgbRoseMadder;
+        // background-color: $rgbRoseMadder;
         // color: $rgbBackgroundBlue;
-        color: white;
+        // color: white;
+        background: transparent;
+        color: $rgbRoseMadder;
         height: 42px;
         padding-top: 0.5rem;
         transition: 0.2s;
@@ -1114,16 +1112,22 @@ h6 {
             background-color: darken($color: $rgbRoseMadder, $amount: 5%);
             outline: none;
             box-shadow: none;
+            text-decoration: none;
+            // color: $rgbRoseMadder;
+            color: white;
         }
 
         &:focus {
             transform: translateX(-50%);
+            background: transparent;
+            color: white;
         }
 
         &:active {
             transform: translateX(-50%) translateY(-4px) scale(0.92);
             border-color: transparent;
             background-color: darken($color: $rgbRoseMadder, $amount: 5%);
+            color: white;
         }
     }
 }
@@ -1152,7 +1156,9 @@ h6 {
 
     &__form-container {
         padding: 40px;
-        background-color: white;
+        // background-color: white;
+
+        background-color: $rgbRaisinBlack;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         border-radius: 4px;
         overflow: hidden;
@@ -1170,7 +1176,8 @@ h6 {
 
     &__label {
         font-weight: $fontWeightBold;
-        color: $rgbDarkBlue;
+        // color: $rgbDarkBlue;
+        color: white;
         line-height: 35px;
         line-height: 2.5rem;
         font-size: 0.7rem;
@@ -1186,7 +1193,7 @@ h6 {
 
     &__input,
     &__textarea {
-        background: #FFFFFF;
+        // background: #FFFFFF;
         border: 1px solid #E7E7E7;
         color: $rgbDark;
         border-radius: 2px;
@@ -1205,7 +1212,19 @@ h6 {
     &__form-btn {
         width: calc(100% - 30px);
         margin: .35em .75em .625em;
-        background-color: $rgbDark;
+        background-color: $rgbRoseMadder;
+        color: white;
+        transition: 0.5s $bezierFastoutSlowin;
+
+        &:hover,
+        &:active {
+            background-color: darken($color: $rgbRoseMadder, $amount: 10%);
+            color: white;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
     }
 
     &__info {
@@ -1237,6 +1256,8 @@ h6 {
             }
         }
     }
+
+
 }
 
 
@@ -1275,7 +1296,7 @@ h6 {
         transition: 0.3s;
 
         &:hover {
-            color: $rgbDarkBlue;
+            color: $rgbRoseMadder;
         }
     }
 }
