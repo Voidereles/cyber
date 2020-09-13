@@ -20,10 +20,12 @@ $('.refer__carousel').owlCarousel({
     responsiveClass: true,
     autoplay: true,
     autoplayHoverPause: true,
+    dots: true,
     responsive: {
         0: {
             items: 2,
-            nav: false
+            nav: false,
+            dots: true,
         },
         600: {
             items: 3,

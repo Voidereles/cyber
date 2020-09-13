@@ -599,7 +599,7 @@ h6 {
   margin-right: -144px;
   margin-top: 100px;
   width: calc(100% + 288px);
-  z-index: 0;
+  z-index: 3;
 }
 
 .refer__container {
@@ -698,6 +698,24 @@ h6 {
 .refer__btn {
   background-color: #303030;
   border-radius: 12px;
+}
+
+.refer .owl-dots {
+  position: relative;
+  z-index: 27;
+  text-align: center;
+}
+
+.refer .owl-dot {
+  width: 16px;
+  height: 16px;
+  background-color: #102a42 !important;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+}
+
+.refer .owl-dot.active {
+  background-color: #dd4242 !important;
 }
 
 .jobs {
@@ -997,7 +1015,6 @@ h6 {
   background-color: #181b25;
   -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
   overflow: hidden;
   min-height: 200px;
   max-width: 540px;
@@ -1260,8 +1277,12 @@ h6 {
     width: 100%;
     padding: initial;
   }
+  .jobs__container {
+    padding-bottom: 60px;
+  }
   .news {
     margin-right: 0;
+    margin-top: 5vh;
   }
   .contact__info {
     min-height: 300px;
