@@ -108,6 +108,37 @@ const IncreaseLogoSize = function () {
         }
     });
 }
+
+const LeftLogoPosition = function () {
+    gsap.to(camera, {
+        duration: 4,
+        ease: "sine.out",
+        onUpdate: function () {
+            camera.updateProjectionMatrix();
+        }
+    });
+
+    gsap.to(camera.position, {
+        duration: 4,
+        x: 56,
+        y: 212,
+        z: 399,
+        onUpdate: function () {
+            update();
+        }
+    })
+
+    gsap.to(controls.target, {
+        duration: 4,
+        x: 462,
+        y: -69,
+        z: -319,
+        ease: "sine.out",
+        onUpdate: function () {
+            controls.update();
+        }
+    });
+}
 // window.DecreaseLogoSize = DecreaseLogoSize; //window, żeby móc odwołać się w konsoli. Tylko do debugowania!
 // window.IncreaseLogoSize = IncreaseLogoSize;
 
@@ -257,18 +288,24 @@ function init() {
     if (window.pageYOffset < window.innerHeight / 3) {
         IncreaseLogoSize();
         console.log("increase no scroll");
-    } else {
+    } else if (window.pageYOffset > window.innerHeight / 3 && window.pageYOffset < window.innerHeight) {
         DecreaseLogoSize();
         console.log('decrease no scroll');
+    } else if (window.pageYOffset > window.innerHeight * 1.6) {
+        LeftLogoPosition();
     }
 
+    // LeftLogoPosition();
+
     $(window).scroll(function () {
-        if (window.pageYOffset >= window.innerHeight / 3) {
-            DecreaseLogoSize();
+        if (window.pageYOffset >= window.innerHeight * 1.6) {
+            LeftLogoPosition();
             console.log("decrease");
-        } else {
+        } else if (window.pageYOffset > window.innerHeight / 3 && window.pageYOffset < window.innerHeight) {
+            DecreaseLogoSize();
+            console.log('decrease no scroll');
+        } else if (window.pageYOffset < window.innerHeight / 3) {
             IncreaseLogoSize();
-            console.log("increase");
         }
     });
 
@@ -462,9 +499,9 @@ function animate() {
     update();
     // targetCamera.x += (-mouseXpercent * 15 - targetCamera.x) / 10;
     if (window.innerWidth > 768) {
-        targetCamera.z += (-mouseYpercent * 15 - targetCamera.z) / 10;
+        // targetCamera.z += (-mouseYpercent * 15 - targetCamera.z) / 10;
         targetCamera.y += (-mouseXpercent * 55 - targetCamera.y) / 10;
-        camera.lookAt(targetCamera);
+        // camera.lookAt(targetCamera);
     }
 
     if (onMouseMoveLogoRotation == false) {
