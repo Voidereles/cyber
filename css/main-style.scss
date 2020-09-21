@@ -926,7 +926,7 @@ h6 {
         text-align: center;
         position: relative;
         margin-bottom: 80px;
-        padding-top: 200px;
+        padding-top: 10rem;
 
         &::before {
             content: 'Job Offers';
@@ -956,7 +956,7 @@ h6 {
     }
 
     &__container {
-        padding-bottom: 200px;
+        padding-bottom: 5rem;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
         grid-gap: 20px;
@@ -1073,7 +1073,7 @@ h6 {
 .news {
     // background-color: white;
     background-color: $rgbRaisinBlack;
-    margin-top: 20vh;
+    margin-top: 5rem;
     position: relative;
     z-index: 2;
     // border-top-left-radius: 0.5rem;
@@ -1276,8 +1276,24 @@ h6 {
     min-height: 50vh;
     position: relative;
 
+    &__bottom-rectangle {
+        position: absolute;
+        top: -15%;
+        z-index: 1;
+        height: 77.5%;
+
+        width: calc(100% + 288px);
+        background-color: $rgbBackgroundBlue;
+        left: $leftMenuWidthMinus;
+    }
+
     .row {
         z-index: 1;
+    }
+
+    &__container {
+        width: 50%;
+        display: inline-block;
     }
 
     &__bottom-degree {
@@ -1285,12 +1301,16 @@ h6 {
         //144px is the value of leftMenuWidth but for some reason it doesn't work in calc's
         width: calc(100% + 288px);
         position: absolute;
-        top: -20%;
-        height: 100%;
+        // top: -20%;
+        top: -10%;
+        // height: 100%;
         max-height: 600px;
-        z-index: 0;
+        // z-index: 0;
+        z-index: 1;
         left: -144px;
 
+        //nowe
+        top: 45%;
     }
 
     &__form-container {
@@ -1384,6 +1404,13 @@ h6 {
         }
     }
 
+    &__info-container {
+        position: absolute;
+        right: -100%;
+        top: 0;
+        z-index: 3;
+    }
+
     &__info {
         padding: 1rem;
         margin-top: 5rem;
@@ -1445,15 +1472,20 @@ h6 {
     background-size: cover;
     background-repeat: no-repeat;
     height: 90vh;
-    width: 100%;
+    // width: 100%;
     position: absolute;
-    bottom: 112px;
+    // bottom: 112px;
     left: 0;
     z-index: 0;
+
+    width: calc(100% + 288px);
+    bottom: -10rem;
+    left: -144px;
+
 }
 
 .footer {
-    margin-top: 3rem;
+    margin-top: 10rem;
     font-size: 0.7rem;
     background-color: black;
     color: grey;
@@ -1588,7 +1620,8 @@ h6 {
         margin: 0 0 0 0;
         padding-top: 100vh;
         width: 100%;
-        overflow-x: hidden;
+        // overflow-x: initial;
+        overflow: hidden;
     }
 
 
@@ -1642,20 +1675,44 @@ h6 {
     .contact {
         &__info {
             min-height: 300px;
-            background: $rgbBackgroundBlue;
+            // background: $rgbBackgroundBlue;
+            margin: 5rem auto auto auto;
+        }
+
+        &__bottom-rectangle,
+        &__bottom-degree {
+            display: none;
+        }
+
+        &__container {
+            display: initial;
+            width: 100%;
+        }
+
+        &__info-container {
+            position: initial;
+            right: initial;
+            top: initial;
+            z-index: 3;
         }
 
         &__form-container {
             padding: 40px 16px;
+            margin: 5rem auto auto auto;
         }
     }
 
     .map {
-        margin-top: 50vh;
-        height: 300px;
+        // margin-top: 50vh;
+        height: 70vh;
+        bottom: initial;
         background-size: contain;
         position: relative;
         z-index: 3;
+    }
+
+    .footer {
+        margin-top: 0;
     }
 
     .footer__container {

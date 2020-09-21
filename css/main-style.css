@@ -764,7 +764,7 @@ h6 {
   text-align: center;
   position: relative;
   margin-bottom: 80px;
-  padding-top: 200px;
+  padding-top: 10rem;
 }
 
 .jobs__heading::before {
@@ -796,7 +796,7 @@ h6 {
 }
 
 .jobs__container {
-  padding-bottom: 200px;
+  padding-bottom: 5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(270px, 1fr))[auto-fill];
@@ -915,7 +915,7 @@ h6 {
 
 .news {
   background-color: #181b25;
-  margin-top: 20vh;
+  margin-top: 5rem;
   position: relative;
   z-index: 2;
   color: #102a42;
@@ -1083,18 +1083,33 @@ h6 {
   position: relative;
 }
 
+.contact__bottom-rectangle {
+  position: absolute;
+  top: -15%;
+  z-index: 1;
+  height: 77.5%;
+  width: calc(100% + 288px);
+  background-color: #111319;
+  left: -144px;
+}
+
 .contact .row {
   z-index: 1;
+}
+
+.contact__container {
+  width: 50%;
+  display: inline-block;
 }
 
 .contact__bottom-degree {
   width: calc(100% + 288px);
   position: absolute;
-  top: -20%;
-  height: 100%;
+  top: -10%;
   max-height: 600px;
-  z-index: 0;
+  z-index: 1;
   left: -144px;
+  top: 45%;
 }
 
 .contact__form-container {
@@ -1164,6 +1179,13 @@ h6 {
           box-shadow: none;
 }
 
+.contact__info-container {
+  position: absolute;
+  right: -100%;
+  top: 0;
+  z-index: 3;
+}
+
 .contact__info {
   padding: 1rem;
   margin-top: 5rem;
@@ -1218,15 +1240,16 @@ h6 {
   background-size: cover;
   background-repeat: no-repeat;
   height: 90vh;
-  width: 100%;
   position: absolute;
-  bottom: 112px;
   left: 0;
   z-index: 0;
+  width: calc(100% + 288px);
+  bottom: -10rem;
+  left: -144px;
 }
 
 .footer {
-  margin-top: 3rem;
+  margin-top: 10rem;
   font-size: 0.7rem;
   background-color: black;
   color: grey;
@@ -1360,7 +1383,7 @@ h6 {
     margin: 0 0 0 0;
     padding-top: 100vh;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
   }
   .projects {
     padding-top: 5vh;
@@ -1401,17 +1424,34 @@ h6 {
   }
   .contact__info {
     min-height: 300px;
-    background: #111319;
+    margin: 5rem auto auto auto;
+  }
+  .contact__bottom-rectangle, .contact__bottom-degree {
+    display: none;
+  }
+  .contact__container {
+    display: initial;
+    width: 100%;
+  }
+  .contact__info-container {
+    position: initial;
+    right: initial;
+    top: initial;
+    z-index: 3;
   }
   .contact__form-container {
     padding: 40px 16px;
+    margin: 5rem auto auto auto;
   }
   .map {
-    margin-top: 50vh;
-    height: 300px;
+    height: 70vh;
+    bottom: initial;
     background-size: contain;
     position: relative;
     z-index: 3;
+  }
+  .footer {
+    margin-top: 0;
   }
   .footer__container {
     margin-left: 1rem;
