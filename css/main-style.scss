@@ -929,7 +929,7 @@ h6 {
         text-align: center;
         position: relative;
         margin-bottom: 80px;
-        padding-top: 10rem;
+        padding-top: 5rem;
 
         &::before {
             content: 'Job Offers';
@@ -959,7 +959,7 @@ h6 {
     }
 
     &__container {
-        padding-bottom: 5rem;
+        padding-bottom: 7rem;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
         grid-gap: 20px;
