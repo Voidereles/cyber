@@ -121,5 +121,5 @@ $(document).ready(function () {
         $('.nav-toggle').toggleClass('nav-toggle--entered');
     })
 
-
+    // $(".projects__title")
 })

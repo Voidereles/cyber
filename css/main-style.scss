@@ -502,42 +502,45 @@ h6 {
         }
     }
 
-    &__title {
-        &:before {
-            content: '';
-            background-color: #fff;
-            box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #96771b99;
-            transition: 0.8s;
-            display: block;
-            position: absolute;
-            bottom: 160px;
-            right: -10vw;
-            width: 0px;
-            height: 0px;
-            border-radius: 50%;
-            opacity: 0;
-            z-index: 2;
-        }
+    // &__title {
+    //     &:before {
+    //         // content: '';
+    //         background-color: #fff;
+    //         box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin rgba(150, 119, 27, 0.6);
+    //         // box-shadow: 0 0 36vmin 16vmin #fff, 0 0 60vmin 30vmin attr(data-color);
+    //         transition: 0.8s;
+    //         display: block;
+    //         position: absolute;
+    //         bottom: 160px;
+    //         right: -10vw;
+    //         width: 0px;
+    //         height: 0px;
+    //         border-radius: 50%;
+    //         opacity: 0;
+    //         z-index: 2;
+    //     }
 
-    }
+    // }
 
-    &__wunderprint {
-        &:before {
-            box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #1739d199;
-        }
-    }
 
-    &__abiprofis {
-        &:before {
-            box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #DD870077;
-        }
-    }
 
-    &__bluzy-szkolne {
-        &:before {
-            box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #04432699;
-        }
-    }
+    // &__wunderprint {
+    //     &:before {
+    //         box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #1739d199;
+    //     }
+    // }
+
+    // &__abiprofis {
+    //     &:before {
+    //         box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #DD870077;
+    //     }
+    // }
+
+    // &__bluzy-szkolne {
+    //     &:before {
+    //         box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #04432699;
+    //     }
+    // }
 
     &__item {
         position: relative;
@@ -565,7 +568,7 @@ h6 {
 
                 &__title {
                     &::before {
-                        opacity: 0.7;
+                        opacity: 0.6;
                         bottom: -20px;
                         right: 160px;
                     }
