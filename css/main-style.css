@@ -284,6 +284,7 @@ h6 {
   -webkit-transition: color 300ms ease 0.1s;
   transition: color 300ms ease 0.1s;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .header__nav-link:active, .header__nav-link:hover {
@@ -724,42 +725,25 @@ h6 {
 }
 
 .jobs__heading {
-  font-size: 1rem;
-  color: #7c7c7c;
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 300;
+  color: #111319;
   text-transform: uppercase;
-  font-weight: 700;
-  text-align: center;
+  padding-bottom: 4rem;
   position: relative;
-  margin-bottom: 80px;
-  padding-top: 5rem;
+  font-weight: 400;
+  font-family: 'Muli', sans-serif;
 }
 
 .jobs__heading::before {
-  content: 'Job Offers';
-  position: absolute;
-  font-size: 8rem;
-  width: 100%;
-  left: 50%;
-  color: rgba(255, 255, 255, 0.8);
-  bottom: -60%;
-  opacity: 0.2;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  z-index: 0;
-}
-
-.jobs__heading::after {
-  top: 15px;
-  left: 50%;
-  bottom: 0;
-  position: relative;
-  width: 35px;
+  content: '';
   height: 2px;
-  content: "";
-  display: inherit;
-  background-color: #102a42;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  width: 50px;
+  background: #111319;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1rem;
 }
 
 .jobs__container {
@@ -1388,6 +1372,9 @@ h6 {
   .news .owl-carousel .owl-nav button.owl-prev,
   .news .owl-carousel button.owl-dot {
     opacity: 1;
+  }
+  .contact {
+    background: #111319;
   }
   .contact__info {
     min-height: 300px;

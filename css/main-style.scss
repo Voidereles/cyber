@@ -240,52 +240,6 @@ h6 {
 
 
 .header {
-
-    // //reset styles
-    // .nav-pills .nav-link.active,
-    // .nav-pills .show>.nav-link,
-    // .navbar-light .navbar-nav .nav-link,
-    // .navbar-light .navbar-nav .nav-link:focus,
-    // .navbar-light .navbar-nav .nav-link:hover,
-    // .navbar-light .navbar-nav .active>.nav-link,
-    // .navbar-light .navbar-nav .nav-link.active,
-    // .navbar-light .navbar-nav .nav-link.show,
-    // .navbar-light .navbar-nav .show>.nav-link {
-    //     color: initial;
-    //     background: initial;
-    // }
-
-    // .nav-pills .nav-link.active,
-    // .nav-pills .show>.nav-link {
-    //     color: $rgbRoseMadder !important;
-    // }
-
-    // .nav-pills .nav-link {
-    //     padding: 16px;
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -401,6 +355,7 @@ h6 {
         position: relative;
         transition: color $durationS ease .1s;
         line-height: 1;
+        white-space: nowrap;
 
         &:active,
         &:hover {
@@ -412,23 +367,7 @@ h6 {
             color: $rgbRoseMadder;
         }
 
-        // &::after {
-        //     content: "";
-        //     position: absolute;
-        //     top: 50%;
-        //     right: $spaceS;
-        //     left: $spaceS;
-        //     height: 4px;
-        //     background: $rgbDarkest;
-        //     transform: scaleX(0) translateY(-2px);
-        //     transition: transform $durationM $bezierFastoutSlowin;
-        //     transform-origin: right;
-        // }
 
-        // &:hover::after {
-        //     transform: scaleX(1) translateY(-2px);
-        //     transform-origin: left;
-        // }
     }
 
     &__nav-icons {
@@ -502,46 +441,6 @@ h6 {
         }
     }
 
-    // &__title {
-    //     &:before {
-    //         // content: '';
-    //         background-color: #fff;
-    //         box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin rgba(150, 119, 27, 0.6);
-    //         // box-shadow: 0 0 36vmin 16vmin #fff, 0 0 60vmin 30vmin attr(data-color);
-    //         transition: 0.8s;
-    //         display: block;
-    //         position: absolute;
-    //         bottom: 160px;
-    //         right: -10vw;
-    //         width: 0px;
-    //         height: 0px;
-    //         border-radius: 50%;
-    //         opacity: 0;
-    //         z-index: 2;
-    //     }
-
-    // }
-
-
-
-    // &__wunderprint {
-    //     &:before {
-    //         box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #1739d199;
-    //     }
-    // }
-
-    // &__abiprofis {
-    //     &:before {
-    //         box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #DD870077;
-    //     }
-    // }
-
-    // &__bluzy-szkolne {
-    //     &:before {
-    //         box-shadow: 0 0 36vmin 16vmin #fff, 0 0 100vmin 50vmin #04432699;
-    //     }
-    // }
-
     &__item {
         position: relative;
         height: 140px;
@@ -607,17 +506,6 @@ h6 {
 
 .about {
     width: 100%;
-
-    // &__heading {
-    //     display: block;
-    //     position: relative;
-    //     font-size: $fontSizeH2;
-    //     line-height: $lineHeightBody;
-    //     color: white;
-    //     font-weight: $fontWeightMedium;
-    //     margin: $space3XL 0 $spaceL 0;
-
-    // }
 
     &__heading {
         font-size: 12px;
@@ -796,19 +684,7 @@ h6 {
             // background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgb(221, 221, 221));
             color: $rgbDark;
 
-            // &:hover {
-            //     .refer__company {
-            //         transform: translateY(-222px);
-            //     }
 
-            //     .refer__company-logo {
-            //         transform: translateY(-50px);
-            //     }
-
-            //     .refer__company-text {
-            //         transform: translateY(-2rem);
-            //     }
-            // }
         }
 
         &-logo-container {
@@ -922,39 +798,25 @@ h6 {
     }
 
     &__heading {
-        font-size: $fontSizeBodyS;
-        color: rgb(124, 124, 124);
+        font-size: 12px;
+        letter-spacing: 4px;
+        font-weight: 300;
+        color: $rgbBackgroundBlue;
         text-transform: uppercase;
-        font-weight: $fontWeightBold;
-        text-align: center;
+        padding-bottom: 4rem;
         position: relative;
-        margin-bottom: 80px;
-        padding-top: 5rem;
+        font-weight: 400;
+        font-family: 'Muli', sans-serif;
 
         &::before {
-            content: 'Job Offers';
-            position: absolute;
-            font-size: 8rem;
-            width: 100%;
-            left: 50%;
-            color: $rgbWhite08;
-            bottom: -60%;
-            opacity: 0.2;
-            transform: translate(-50%);
-            z-index: 0;
-        }
-
-        &::after {
-            top: 15px;
-            left: 50%;
-            bottom: 0;
-            position: relative;
-            width: 35px;
+            content: '';
             height: 2px;
-            content: "";
-            display: inherit;
-            background-color: $rgbDarkBlue;
-            transform: translateX(-50%);
+            width: 50px;
+            background: $rgbBackgroundBlue;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 1rem;
+
         }
     }
 
@@ -1193,49 +1055,6 @@ h6 {
         opacity: 0.6;
     }
 
-    // &__btn {
-    //     position: absolute;
-    //     bottom: -1rem;
-    //     width: calc(100% - 3.5rem);
-    //     // background: $rgbDark;
-    //     border-color: transparent;
-    //     // background-color: white;
-    //     // background-color: $rgbRoseMadder;
-    //     // color: $rgbBackgroundBlue;
-    //     // color: white;
-    //     background: transparent;
-    //     color: $rgbRoseMadder;
-    //     height: 42px;
-    //     padding-top: 0.5rem;
-    //     transition: 0.2s;
-    //     left: 50%;
-    //     transform: translateX(-50%);
-
-    //     &:hover,
-    //     &:focus {
-    //         transform: translateX(-50%) translateY(-4px);
-    //         border-color: transparent;
-    //         background-color: darken($color: $rgbRoseMadder, $amount: 5%);
-    //         outline: none;
-    //         box-shadow: none;
-    //         text-decoration: none;
-    //         // color: $rgbRoseMadder;
-    //         color: white;
-    //     }
-
-    //     &:focus {
-    //         transform: translateX(-50%);
-    //         background: transparent;
-    //         color: white;
-    //     }
-
-    //     &:active {
-    //         transform: translateX(-50%) translateY(-4px) scale(0.92);
-    //         border-color: transparent;
-    //         background-color: darken($color: $rgbRoseMadder, $amount: 5%);
-    //         color: white;
-    //     }
-    // }
 
     &__btn {
         color: $rgbRoseMadder;
@@ -1336,29 +1155,11 @@ h6 {
         flex-direction: column;
     }
 
-    // &__label {
-    //     font-weight: $fontWeightBold;
-    //     // color: $rgbDarkBlue;
-    //     color: white;
-    //     line-height: 35px;
-    //     line-height: 2.5rem;
-    //     font-size: 0.7rem;
-    //     margin-bottom: 0;
-    //     text-transform: uppercase;
-    // }
-
-    // &__label-star {
-    //     padding-left: 5px;
-    //     color: $rgbRoseMadder;
-    // }
 
 
     &__input,
     &__textarea {
-        // background: #FFFFFF;
-        // border: 1px solid #E7E7E7;
-        // color: $rgbDark;
-        // border-radius: 2px;
+
         width: 100%;
         line-height: 16px;
         padding: 0.75rem 0 0.5rem 0;
@@ -1377,14 +1178,9 @@ h6 {
         }
     }
 
-    // &__textarea {
-    //     &:focus {
-    //         background-color:
-    //     }
-    // }
+
 
     &__form-btn {
-        // width: calc(100% - 30px);
         margin: .35em .75em .625em;
         display: inline-block;
         padding: 0.75rem 2rem;
@@ -1676,9 +1472,10 @@ h6 {
     }
 
     .contact {
+        background: $rgbBackgroundBlue;
+
         &__info {
             min-height: 300px;
-            // background: $rgbBackgroundBlue;
             margin: 5rem auto auto auto;
         }
 
