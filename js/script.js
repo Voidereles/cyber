@@ -24,7 +24,7 @@ var introLogo = document.getElementById('IntroLogo');
 })();
 
 window.addEventListener("optimizedScroll", function () {
-    scaleValue = window.pageYOffset / 64;
+    scaleValue = window.pageYOffset / 50;
     if (scaleValue <= 1) {
         scaleValue = 1;
     }
