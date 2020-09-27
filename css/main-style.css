@@ -133,6 +133,16 @@ h6 {
   max-width: 1700px;
 }
 
+.introLogo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -344,7 +354,7 @@ h6 {
 }
 
 .main-container {
-  margin-top: 100vh;
+  margin-top: 400vh;
   margin-left: 144px;
   margin-right: 144px;
   width: calc(100% - 288px);
@@ -383,10 +393,10 @@ h6 {
   position: relative;
   height: 140px;
   width: 100%;
-  color: rgba(187, 194, 229, 0.3);
+  color: black;
   font-size: 5.7rem;
   line-height: 66px;
-  font-weight: 300;
+  font-weight: 900;
   -webkit-transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   z-index: 1;

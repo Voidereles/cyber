@@ -237,7 +237,13 @@ h6 {
     max-width: 1700px;
 }
 
-
+.introLogo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.2s linear;
+}
 
 .header {
     display: flex;
@@ -405,7 +411,7 @@ h6 {
 }
 
 .main-container {
-    margin-top: 100vh;
+    margin-top: 400vh;
     margin-left: $leftMenuWidth;
     margin-right: $leftMenuWidth;
     width: calc(100% - 288px);
@@ -445,10 +451,11 @@ h6 {
         position: relative;
         height: 140px;
         width: 100%;
-        color: rgba(187, 194, 229, .3);
+        // color: rgba(187, 194, 229, .3);
+        color: black;
         font-size: 5.7rem;
         line-height: 66px;
-        font-weight: 300;
+        font-weight: 900;
         transition: .6s cubic-bezier(.165, .84, .44, 1);
         z-index: 1;
 

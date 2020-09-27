@@ -1,5 +1,35 @@
 // new WOW().init();
+var introLogo = document.getElementById('IntroLogo');
 
+;
+(function () {
+
+    var throttle = function (type, name, obj) {
+        var obj = obj || window;
+        var running = false;
+        var func = function () {
+            if (running) {
+                return;
+            }
+            running = true;
+            requestAnimationFrame(function () {
+                obj.dispatchEvent(new CustomEvent(name));
+                running = false;
+            });
+        };
+        obj.addEventListener(type, func);
+    };
+
+    throttle("scroll", "optimizedScroll");
+})();
+
+window.addEventListener("optimizedScroll", function () {
+    scaleValue = window.pageYOffset / 64;
+    if (scaleValue <= 1) {
+        scaleValue = 1;
+    }
+    introLogo.style.transform = "translate(-50%, -50%) scale(" + scaleValue + ")";
+})
 
 $('.about__carousel').owlCarousel({
     loop: true,
