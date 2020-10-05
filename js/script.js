@@ -1,7 +1,6 @@
 // new WOW().init();
 var introLogo = document.getElementById('IntroLogo');
 
-;
 (function () {
 
     var throttle = function (type, name, obj) {
@@ -28,8 +27,10 @@ window.addEventListener("optimizedScroll", function () {
     if (scaleValue <= 1) {
         scaleValue = 1;
     }
-    introLogo.style.transform = "translate(-50%, -50%) scale(" + scaleValue + ")";
+    // introLogo.style.transform = "translate(-50%, -350%) scale(" + scaleValue + ")";
 })
+
+
 
 $('.about__carousel').owlCarousel({
     loop: true,
@@ -152,4 +153,6 @@ $(document).ready(function () {
     })
 
     // $(".projects__title")
+
+
 })

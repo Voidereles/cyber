@@ -202,6 +202,7 @@ h6 {
 }
 
 
+
 .threeJS {
     &__container {
         position: fixed;
@@ -210,6 +211,13 @@ h6 {
         width: 100%;
         // height: 100vh;
         z-index: -1;
+        // background: white;
+        transition: 4s;
+
+        &.darker {
+            // background: linear-gradient(1turn, #303435, #292d2d 47.83%, #151618);
+            background: #3BC14A;
+        }
 
         canvas {
             outline: none;
@@ -243,6 +251,7 @@ h6 {
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
     transition: 0.2s linear;
+    display: none;
 }
 
 .header {
@@ -411,7 +420,7 @@ h6 {
 }
 
 .main-container {
-    margin-top: 400vh;
+    // margin-top: 100vh;
     margin-left: $leftMenuWidth;
     margin-right: $leftMenuWidth;
     width: calc(100% - 288px);
@@ -419,8 +428,38 @@ h6 {
     z-index: 1;
 }
 
+.hero {
+    text-align: center;
+    position: fixed;
+    z-index: -2;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    color: black;
+
+}
+
+// .video {
+//     position: absolute;
+//     right: 0;
+//     bottom: 0;
+//     top: 0;
+//     right: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-size: 100% 100%;
+//     background-color: #2B2118;
+//     background-image: url(../BackgroundVideo.mp4);
+//     background-position: center center;
+//     background-size: contain;
+//     object-fit: cover;
+//     z-index: 3;
+//     filter: brightness(0.4);
+//     -webkit-filter: brightness(0.4);
+// }
 
 .projects {
+    margin-top: 150vh;
     padding-top: calc(45vh - 50px);
     padding-bottom: calc(45vh - 85px);
 

@@ -45,7 +45,9 @@ const colorChange = function (getColorTheme) {
         b: colorTo.b,
         duration: 0.5
     });
-    // colorTransition.play();
+
+    console.log(getColorTheme);
+    $(".threeJS__container").css("background", getColorTheme);
 }
 
 const DecreaseLogoSize = function () {
@@ -82,9 +84,12 @@ const DecreaseLogoSize = function () {
 
 
 //export because of module!!! big brain time https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
-const IncreaseLogoSize = function () {
+
+
+const onBeginning = function () {
     gsap.to(camera, {
         duration: 4,
+        fov: 27,
         ease: "sine.out",
         onUpdate: function () {
             camera.updateProjectionMatrix();
@@ -93,9 +98,9 @@ const IncreaseLogoSize = function () {
 
     gsap.to(camera.position, {
         duration: 4,
-        x: 85,
-        y: 357,
-        z: 91,
+        x: -58,
+        y: 130,
+        z: -73,
         onUpdate: function () {
             update();
         }
@@ -103,15 +108,16 @@ const IncreaseLogoSize = function () {
 
     gsap.to(controls.target, {
         duration: 4,
-        x: 85,
-        y: -664,
-        z: -143,
+        x: -10,
+        y: 100,
+        z: -26,
         ease: "sine.out",
         onUpdate: function () {
             controls.update();
         }
     });
 }
+
 
 const gotoItemshop = function () {
     gsap.to(lightD.position, {
@@ -138,7 +144,7 @@ const gotoItemshop = function () {
         onUpdate: function () {
             update();
         }
-    })
+    });
 
     gsap.to(controls.target, {
         duration: 4,
@@ -150,7 +156,7 @@ const gotoItemshop = function () {
             controls.update();
         }
     });
-}
+};
 
 const gotoGameBar = function () {
     gsap.to(lightD.position, {
@@ -421,8 +427,9 @@ function init() {
     camera.position.set(-58, 130, -73);
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x111319);
-    // scene.background.color = 0xccaacc;
+    // scene.background = new THREE.Color(0x11131900);
+    // scene.background = new THREE.Color(0xff0000);
+
 
 
     scene.fog = new THREE.Fog(0x111319, 300, 900);
@@ -490,8 +497,13 @@ function init() {
     // mesh.position.set(100, 100, 100);
 
     renderer = new THREE.WebGLRenderer({
-        antialias: true
+        antialias: true,
+        alpha: true
     });
+
+    // renderer.setClearColor(0x000000, 0);
+    renderer.setClearColor(0xffffff, 0);
+
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.shadowMap.enabled = true;
@@ -499,7 +511,7 @@ function init() {
 
 
     controls = new OrbitControls(camera, renderer.domElement);
-    controls.target.set(-10, 51, -26);
+    controls.target.set(-10, 100, -26);
 
 
 
@@ -537,30 +549,29 @@ function init() {
 
     gsap.registerPlugin(CustomEase);
 
+    let onBeginningScrollFlag = true;
 
-    // if (window.pageYOffset < window.innerHeight / 3) {
-    //     IncreaseLogoSize();
-    //     console.log("increase no scroll");
-    // } else if (window.pageYOffset > window.innerHeight / 3 && window.pageYOffset < window.innerHeight) {
-    //     DecreaseLogoSize();
-    //     console.log('decrease no scroll');
-    // } else if (window.pageYOffset > window.innerHeight * 1.6) {
-    //     LeftLogoPosition();
-    // }
+    if (window.pageYOffset < window.innerHeight / 3) {
+        onBeginning();
+        // colorChange('#FFFFFF');
+        onBeginningScrollFlag = true;
+    } else if (window.pageYOffset >= window.innerHeight / 3 && onBeginningScrollFlag == true) {
+        gotoDefault();
+        onBeginningScrollFlag = false;
+    }
 
-    // // LeftLogoPosition();
 
-    // $(window).scroll(function () {
-    //     if (window.pageYOffset >= window.innerHeight * 1.6) {
-    //         LeftLogoPosition();
-    //         console.log("decrease");
-    //     } else if (window.pageYOffset > window.innerHeight / 3 && window.pageYOffset < window.innerHeight) {
-    //         DecreaseLogoSize();
-    //         console.log('decrease no scroll');
-    //     } else if (window.pageYOffset < window.innerHeight / 3) {
-    //         IncreaseLogoSize();
-    //     }
-    // });
+    $(window).scroll(function () {
+        if (window.pageYOffset < window.innerHeight / 3) {
+            onBeginning();
+            // colorChange('#FFFFFF');
+            $(".threeJS__container").css("background", "#FFFFFF00");
+            onBeginningScrollFlag = true;
+        } else if (window.pageYOffset >= window.innerHeight / 3 && onBeginningScrollFlag == true) {
+            gotoDefault();
+            onBeginningScrollFlag = false;
+        }
+    });
 
 
 
@@ -830,5 +841,14 @@ function animate() {
     renderer.render(scene, camera);
 
 };
+const threeJSContainerFoo = $('#threeJSContainer')
+threeJSContainerFoo.prependTo('body');
 
-$('#threeJSContainer').prependTo('body');
+
+$(window).scroll(function () {
+    if (window.pageYOffset < window.innerHeight / 3) {
+        threeJSContainerFoo.removeClass('darker');
+    } else {
+        threeJSContainerFoo.addClass('darker');
+    }
+});

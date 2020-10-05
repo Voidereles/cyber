@@ -111,6 +111,12 @@ h6 {
   left: 0;
   width: 100%;
   z-index: -1;
+  -webkit-transition: 4s;
+  transition: 4s;
+}
+
+.threeJS__container.darker {
+  background: #3BC14A;
 }
 
 .threeJS__container canvas {
@@ -141,6 +147,7 @@ h6 {
           transform: translate(-50%, -50%) scale(1);
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
+  display: none;
 }
 
 .header {
@@ -354,7 +361,6 @@ h6 {
 }
 
 .main-container {
-  margin-top: 400vh;
   margin-left: 144px;
   margin-right: 144px;
   width: calc(100% - 288px);
@@ -362,7 +368,19 @@ h6 {
   z-index: 1;
 }
 
+.hero {
+  text-align: center;
+  position: fixed;
+  z-index: -2;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  color: black;
+}
+
 .projects {
+  margin-top: 150vh;
   padding-top: calc(45vh - 50px);
   padding-bottom: calc(45vh - 85px);
 }
